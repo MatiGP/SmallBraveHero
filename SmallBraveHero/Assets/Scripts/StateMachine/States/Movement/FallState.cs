@@ -2,16 +2,50 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FallState : MonoBehaviour
+public class FallState : BaseState
 {
-    // Start is called before the first frame update
-    void Start()
+    public FallState(CharacterController controller, StateMachine stateMachine) : base(controller, stateMachine)
+    {
+    }
+
+    public override void Enter()
+    {
+        movementVector = Vector3.zero;
+        controller.CharacterAnimator.Play(controller.CharacterAnimPrefix + EStateType.Fall);
+        
+    }
+
+    public override void Exit()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void UpdateInput()
+    {
+        movementVector.x = controller.Direction * controller.MoveSpeed;
+        movementVector.y -= controller.Gravity * Time.deltaTime;
+
+        controller.transform.position += movementVector * Time.deltaTime;
+    }
+
+    public override void UpdateLogic()
+    {
+        if (controller.IsGrounded)
+        {
+            controller.FixCharacterGroundPosition();
+
+            if (controller.Direction != 0)
+            {
+                stateMachine.ChangeState(EStateType.Run);
+            }
+
+            stateMachine.ChangeState(EStateType.Idle);
+        }
+
+        
+    }
+
+    public override void UpdatePhysics()
     {
         
     }

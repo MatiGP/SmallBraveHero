@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: Blue_GroundTile
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 8371019140385695755, guid: 1bef4a44b2f872f4283ca41538cb1f8d, type: 3}
+  m_Sprite: {fileID: 8847452972208251017, guid: e5658c96dc4a00e408d6edf8342186d1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

@@ -2,16 +2,47 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IdleState : MonoBehaviour
+public class IdleState : BaseState
 {
-    // Start is called before the first frame update
-    void Start()
+    public IdleState(CharacterController controller, StateMachine stateMachine) : base(controller, stateMachine)
+    {
+    }
+
+    public override void Enter()
+    {
+        movementVector = Vector2.zero;
+        controller.CharacterAnimator.Play(controller.CharacterAnimPrefix + EStateType.Idle);
+    }
+
+    public override void Exit()
+    {
+        movementVector = Vector2.zero;
+    }
+
+    public override void UpdateInput()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void UpdateLogic()
+    {
+        if(controller.Direction != 0)
+        {
+            stateMachine.ChangeState(EStateType.Run);
+        }
+
+        if (controller.IsJumping)
+        {
+            stateMachine.ChangeState(EStateType.Jump);
+        }
+
+        if (!controller.IsGrounded)
+        {
+            stateMachine.ChangeState(EStateType.Fall);
+        }
+    }
+
+    public override void UpdatePhysics()
     {
         
     }

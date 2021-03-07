@@ -1,31 +1,46 @@
 fileFormatVersion: 2
-guid: d1da3e7fc768d1e40a27b290a857d2f8
+guid: c3b1b557a0d66af45a137497c531282b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4403340709005190731
-    second: 16x16 Knight_0
+      213: -5521997008405693381
+    second: 16x16 SkeletalMage_0
   - first:
-      213: -5381121023015785629
-    second: 16x16 Knight_1
+      213: -7336941707469388066
+    second: 16x16 SkeletalMage_1
   - first:
-      213: -1388727690579484114
-    second: 16x16 Knight_2
+      213: -436372241861070875
+    second: 16x16 SkeletalMage_2
   - first:
-      213: -443262750207605602
-    second: 16x16 Knight_3
+      213: 531151923539527484
+    second: 16x16 SkeletalMage_3
   - first:
-      213: 958266342326600144
-    second: 16x16 Knight_4
+      213: -349933889575824116
+    second: 16x16 SkeletalMage_4
   - first:
-      213: 950060057463238009
-    second: 16x16 Knight_5
+      213: 5250174012962657396
+    second: 16x16 SkeletalMage_5
   - first:
-      213: -4377535620667700181
-    second: 16x16 Knight_6
+      213: 3597682711960346856
+    second: 16x16 SkeletalMage_6
   - first:
-      213: -8224375681230959437
-    second: 16x16 Knight_7
+      213: 8081324758449910115
+    second: 16x16 SkeletalMage_7
+  - first:
+      213: 160330970463304391
+    second: 16x16 SkeletalMage_8
+  - first:
+      213: -4369707642712879670
+    second: 16x16 SkeletalMage_9
+  - first:
+      213: 5292549424224616831
+    second: 16x16 SkeletalMage_10
+  - first:
+      213: 4931838769041947643
+    second: 16x16 SkeletalMage_11
+  - first:
+      213: 94335317938562912
+    second: 16x16 SkeletalMage_12
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -125,13 +140,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 16x16 Knight_0
+      name: 16x16 SkeletalMage_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1024
-        width: 512
-        height: 512
+        y: 2496
+        width: 832
+        height: 832
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,20 +154,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4665418b0fcb1d30800000000000000
-      internalID: 4403340709005190731
+      spriteID: b3c75374afced53b0800000000000000
+      internalID: -5521997008405693381
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16x16 Knight_1
+      name: 16x16 SkeletalMage_1
       rect:
         serializedVersion: 2
-        x: 512
-        y: 1024
-        width: 512
-        height: 512
+        x: 832
+        y: 2496
+        width: 832
+        height: 832
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,20 +175,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36be1c1a0fa6255b0800000000000000
-      internalID: -5381121023015785629
+      spriteID: ed60a8cc362fd2a90800000000000000
+      internalID: -7336941707469388066
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16x16 Knight_2
+      name: 16x16 SkeletalMage_2
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 1024
-        width: 512
-        height: 512
+        x: 1664
+        y: 2496
+        width: 832
+        height: 832
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,20 +196,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e22e241f58f3abce0800000000000000
-      internalID: -1388727690579484114
+      spriteID: 5efa70e02c1b1f9f0800000000000000
+      internalID: -436372241861070875
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16x16 Knight_3
+      name: 16x16 SkeletalMage_3
+      rect:
+        serializedVersion: 2
+        x: 2496
+        y: 2496
+        width: 832
+        height: 832
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c37c65c3cd70f5700800000000000000
+      internalID: 531151923539527484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 16x16 SkeletalMage_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 512
-        width: 512
-        height: 512
+        y: 1664
+        width: 832
+        height: 832
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,20 +238,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9486bf80e639d9f0800000000000000
-      internalID: -443262750207605602
+      spriteID: c0556f04bf8c42bf0800000000000000
+      internalID: -349933889575824116
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16x16 Knight_4
+      name: 16x16 SkeletalMage_5
       rect:
         serializedVersion: 2
-        x: 512
-        y: 512
-        width: 512
-        height: 512
+        x: 832
+        y: 1664
+        width: 832
+        height: 832
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,20 +259,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d1079649227c4d00800000000000000
-      internalID: 958266342326600144
+      spriteID: 47450abb27d5cd840800000000000000
+      internalID: 5250174012962657396
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16x16 Knight_5
+      name: 16x16 SkeletalMage_6
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 512
-        width: 512
-        height: 512
+        x: 1664
+        y: 1664
+        width: 832
+        height: 832
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,20 +280,125 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97d2260b69a4f2d00800000000000000
-      internalID: 950060057463238009
+      spriteID: 8e0e5fc7d598de130800000000000000
+      internalID: 3597682711960346856
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 16x16 Knight_6
+      name: 16x16 SkeletalMage_7
+      rect:
+        serializedVersion: 2
+        x: 2496
+        y: 1664
+        width: 832
+        height: 832
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 361f9f51d02a62070800000000000000
+      internalID: 8081324758449910115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 16x16 SkeletalMage_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 832
+        width: 832
+        height: 832
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ca75fc0b2c993200800000000000000
+      internalID: 160330970463304391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 16x16 SkeletalMage_9
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 832
+        width: 832
+        height: 832
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acd0ac7fc0eab53c0800000000000000
+      internalID: -4369707642712879670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 16x16 SkeletalMage_10
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 832
+        width: 832
+        height: 832
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f714b1309a9e27940800000000000000
+      internalID: 5292549424224616831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 16x16 SkeletalMage_11
+      rect:
+        serializedVersion: 2
+        x: 2496
+        y: 832
+        width: 832
+        height: 832
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfbbe3efa39617440800000000000000
+      internalID: 4931838769041947643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 16x16 SkeletalMage_12
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 512
-        height: 512
+        width: 832
+        height: 832
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,29 +406,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2c8b72db8edf33c0800000000000000
-      internalID: -4377535620667700181
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 16x16 Knight_7
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3bc0edc74e52ddd80800000000000000
-      internalID: -8224375681230959437
+      spriteID: 067608bc8752f4100800000000000000
+      internalID: 94335317938562912
       vertices: []
       indices: 
       edges: []
