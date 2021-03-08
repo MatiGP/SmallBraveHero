@@ -29,6 +29,13 @@ public class RunState : BaseState
 
     public override void UpdateLogic()
     {
+        controller.FlipSprite();
+
+        if(controller.IsTouchingLeftWall || controller.IsTouchingRightWall)
+        {
+            movementVector.x = 0;            
+        }
+
         if (controller.IsJumping)
         {
             stateMachine.ChangeState(EStateType.Jump);

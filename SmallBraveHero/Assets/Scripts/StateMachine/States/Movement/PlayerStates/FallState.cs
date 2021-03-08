@@ -30,6 +30,8 @@ public class FallState : BaseState
 
     public override void UpdateLogic()
     {
+        controller.FlipSprite();
+
         if (controller.IsGrounded)
         {
             controller.FixCharacterGroundPosition();
@@ -42,6 +44,10 @@ public class FallState : BaseState
             stateMachine.ChangeState(EStateType.Idle);
         }
 
+        if(controller.IsTouchingLeftWall || controller.IsTouchingRightWall)
+        {
+            movementVector.x = 0;           
+        }
         
     }
 

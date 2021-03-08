@@ -9,12 +9,15 @@ public abstract class CharacterController : MonoBehaviour
     [SerializeField] LayerMask wallLayer;
     public bool Gizmo;
 
+    [Header("General References")]
+    [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] BoxCollider2D characterCollider;
     
     public Animator CharacterAnimator { get => characterAnimator; }
     [SerializeField] Animator characterAnimator;
 
     public float MoveSpeed { get => moveSpeed; }
+    [Header("Movement Settings")]
     [SerializeField] protected float moveSpeed;
 
     public float JumpHeight { get => jumpHeight; }
@@ -55,16 +58,13 @@ public abstract class CharacterController : MonoBehaviour
     [SerializeField] Transform wallDetectorRight;
     [SerializeField] Transform wallDetectorLeft;
     [SerializeField] Vector2 wallDetectorSize;
-    
-
-    public StateMachine StateMachine { get; private set; }
 
     protected void CheckForCollisions()
     {
         isGrounded = Physics2D.OverlapBox(groundDetector.position, groundDetectorSize, 0f, groundLayer);
         isTouchingCeiling = Physics2D.OverlapBox(ceilingDetector.position, ceilingDetectorSize, 0f, groundLayer);
         isTouchingLeftWall = Physics2D.OverlapBox(wallDetectorLeft.position, wallDetectorSize, 0f, wallLayer);
-        isTouchingLeftWall = Physics2D.OverlapBox(wallDetectorRight.position, wallDetectorSize, 0f, wallLayer);
+        isTouchingRightWall = Physics2D.OverlapBox(wallDetectorRight.position, wallDetectorSize, 0f, wallLayer);
     }
 
     public void FixCharacterGroundPosition()
@@ -75,12 +75,43 @@ public abstract class CharacterController : MonoBehaviour
 
     public void FixCharacterWallPosition()
     {
-        
+        float wallPos;
+
+        if (IsTouchingLeftWall)
+        {
+            wallPos = Physics2D.OverlapBox(wallDetectorLeft.position, wallDetectorSize, 0f, wallLayer).ClosestPoint(transform.position).x;
+            
+        }
+        else
+        {
+            wallPos = Physics2D.OverlapBox(wallDetectorRight.position, wallDetectorSize, 0f, wallLayer).ClosestPoint(transform.position).x;
+        }
+
+        wallPos += characterCollider.size.x / 2;
+
+        transform.position = new Vector3(wallPos, transform.position.y);
     }
 
     protected void CalculateGravity()
     {
         gravity = (2 * jumpHeight) / (jumpDuration * jumpDuration);
+    }
+
+    public void ChangeDirection()
+    {
+        direction *= -1;      
+    }
+
+    public void FlipSprite()
+    {
+        if(direction == 1)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else if(direction == -1)
+        {
+            spriteRenderer.flipX = true;
+        }
     }
 
     protected void OnDrawGizmos()

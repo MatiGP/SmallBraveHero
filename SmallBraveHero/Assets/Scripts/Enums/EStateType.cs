@@ -7,5 +7,8 @@ public enum EStateType
     Idle,
     Run,
     Jump,
-    Fall
+    Fall,
+    Patrol,
+    Attack,
+    Death
 }
