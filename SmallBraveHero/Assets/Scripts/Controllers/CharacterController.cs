@@ -26,6 +26,8 @@ public abstract class CharacterController : MonoBehaviour
     public float JumpDuration { get => jumpDuration; }
     [SerializeField] protected float jumpDuration;
 
+    [SerializeField] protected float wallPosOffset = 0.2f;
+
     public float Gravity { get => gravity; }
     protected float gravity;
 
@@ -79,12 +81,12 @@ public abstract class CharacterController : MonoBehaviour
 
         if (IsTouchingLeftWall)
         {
-            wallPos = Physics2D.OverlapBox(wallDetectorLeft.position, wallDetectorSize, 0f, wallLayer).ClosestPoint(transform.position).x;
+            wallPos = Physics2D.OverlapBox(wallDetectorLeft.position, wallDetectorSize, 0f, wallLayer).ClosestPoint(transform.position).x + wallPosOffset;
             
         }
         else
         {
-            wallPos = Physics2D.OverlapBox(wallDetectorRight.position, wallDetectorSize, 0f, wallLayer).ClosestPoint(transform.position).x;
+            wallPos = Physics2D.OverlapBox(wallDetectorRight.position, wallDetectorSize, 0f, wallLayer).ClosestPoint(transform.position).x - wallPosOffset;
         }
 
         wallPos += characterCollider.size.x / 2;

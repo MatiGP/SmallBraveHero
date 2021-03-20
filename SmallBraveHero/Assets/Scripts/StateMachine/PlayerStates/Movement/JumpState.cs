@@ -25,7 +25,7 @@ public class JumpState : BaseState
         movementVector.x = controller.Direction * controller.MoveSpeed;
         movementVector.y -= controller.Gravity * Time.deltaTime;
 
-        controller.transform.position += movementVector * Time.deltaTime;
+        
 
     }
 
@@ -38,11 +38,17 @@ public class JumpState : BaseState
             stateMachine.ChangeState(EStateType.Fall);
         }
 
-        if(controller.IsTouchingLeftWall || controller.IsTouchingRightWall)
+        if (controller.IsTouchingLeftWall && controller.Direction < 0)
         {
             movementVector.x = 0;
         }
-        
+
+        if (controller.IsTouchingRightWall && controller.Direction > 0)
+        {
+            movementVector.x = 0;
+        }
+
+        controller.transform.position += movementVector * Time.deltaTime;
     }
 
     public override void UpdatePhysics()

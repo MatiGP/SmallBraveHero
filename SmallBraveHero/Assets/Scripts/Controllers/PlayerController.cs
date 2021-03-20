@@ -39,12 +39,9 @@ public class PlayerController : CharacterController
         direction = Input.GetAxisRaw("Horizontal");
         isJumping = Input.GetAxis("Jump") > 0;
 
-        stateMachine.CurrentState.UpdateLogic();
-    }
-
-    private void LateUpdate()
-    {
         stateMachine.CurrentState.UpdateInput();
+        stateMachine.CurrentState.UpdateLogic();
+
     }
 
     private void FixedUpdate()

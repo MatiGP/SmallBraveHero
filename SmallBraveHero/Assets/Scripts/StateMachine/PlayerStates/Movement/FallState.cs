@@ -23,14 +23,22 @@ public class FallState : BaseState
     public override void UpdateInput()
     {
         movementVector.x = controller.Direction * controller.MoveSpeed;
-        movementVector.y -= controller.Gravity * Time.deltaTime;
-
-        controller.transform.position += movementVector * Time.deltaTime;
+        movementVector.y -= controller.Gravity * Time.deltaTime;       
     }
 
     public override void UpdateLogic()
     {
         controller.FlipSprite();
+
+        if (controller.IsTouchingLeftWall && controller.Direction < 0)
+        {
+            movementVector.x = 0;
+        }
+
+        if (controller.IsTouchingRightWall && controller.Direction > 0)
+        {
+            movementVector.x = 0;
+        }
 
         if (controller.IsGrounded)
         {
@@ -42,13 +50,9 @@ public class FallState : BaseState
             }
 
             stateMachine.ChangeState(EStateType.Idle);
-        }
+        }       
 
-        if(controller.IsTouchingLeftWall || controller.IsTouchingRightWall)
-        {
-            movementVector.x = 0;           
-        }
-        
+        controller.transform.position += movementVector * Time.deltaTime;
     }
 
     public override void UpdatePhysics()

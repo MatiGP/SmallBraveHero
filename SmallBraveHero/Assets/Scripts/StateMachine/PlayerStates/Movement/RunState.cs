@@ -21,19 +21,21 @@ public class RunState : BaseState
 
     public override void UpdateInput()
     {
-        movementVector.x = controller.Direction * controller.MoveSpeed;
-
-        controller.transform.position += movementVector * Time.deltaTime;
-
+        movementVector.x = controller.Direction * controller.MoveSpeed;      
     }
 
     public override void UpdateLogic()
     {
         controller.FlipSprite();
 
-        if(controller.IsTouchingLeftWall || controller.IsTouchingRightWall)
+        if (controller.IsTouchingLeftWall && controller.Direction < 0)
         {
-            movementVector.x = 0;            
+            movementVector.x = 0;
+        }
+
+        if (controller.IsTouchingRightWall && controller.Direction > 0)
+        {
+            movementVector.x = 0;
         }
 
         if (controller.IsJumping)
@@ -51,7 +53,7 @@ public class RunState : BaseState
             stateMachine.ChangeState(EStateType.Idle);
         }
 
-        
+        controller.transform.position += movementVector * Time.deltaTime;
     }
 
     public override void UpdatePhysics()

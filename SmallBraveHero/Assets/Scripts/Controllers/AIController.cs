@@ -22,8 +22,7 @@ public class AIController : CharacterController
     {
         stateMachine.Initialize();
 
-        stateMachine.AddState(EStateType.Patrol, new PatrolState(this, stateMachine));
-        //stateMachine.AddState(EStateType.Fall, new FallState(this, stateMachine)); Refactor
+        
         
         stateMachine.Start();
 
@@ -34,6 +33,8 @@ public class AIController : CharacterController
     {
         
         stateMachine.CurrentState.UpdateLogic();
+        
+        
     }
 
     private void LateUpdate()
@@ -49,3 +50,5 @@ public class AIController : CharacterController
     }
 
 }
+
+enum EEnemyType { Melee, Ranged }
