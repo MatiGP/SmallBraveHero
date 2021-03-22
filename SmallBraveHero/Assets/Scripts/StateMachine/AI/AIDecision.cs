@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class AIDecision : ScriptableObject
+namespace Code.StateMachine.AI.Decisions
 {
-    public int DecisionValue { get => decisionValue; }
-    [SerializeField] int decisionValue;
+    public abstract class AIDecision : ScriptableObject
+    {
+        public int DecisionValue { get => decisionValue; }
+        [SerializeField] int decisionValue;
 
-    public abstract bool Decide(AIController controller);
+        public abstract bool Decide(AIController controller);
+    }
 }

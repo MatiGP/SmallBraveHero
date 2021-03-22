@@ -1,12 +1,47 @@
-﻿using System.Collections;
+﻿using Code.StateMachine.AI.Actions;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class AIState : ScriptableObject
+namespace Code.StateMachine.AI.States
 {
-    public abstract void Enter(AIController controller);
-    public abstract void Exit(AIController controller);
-    public abstract void UpdateInput(AIController controller);
-    public abstract void UpdateLogic(AIController controller);
-    public abstract void UpdatePhysics(AIController controller);
+    [CreateAssetMenu(menuName ="AI/State")]
+    public class AIState : ScriptableObject
+    {
+        [SerializeField] AIAction[] actions;
+        [SerializeField] Transition[] transitions;
+
+        public void UpdateState(AIController controller)
+        {
+            DoActions(controller);
+
+            CheckTransitions(controller);
+        }
+
+        private void DoActions(AIController controller)
+        {
+            for (int i = 0; i < actions.Length; i++)
+            {
+                actions[i].Act(controller);
+            }
+        }
+
+        private void CheckTransitions(AIController controller)
+        {
+            for (int i = 0; i < transitions.Length; i++)
+            {
+                bool decisionSucceeded = transitions[i].Decision.Decide(controller);
+
+                if (decisionSucceeded)
+                {
+                    controller.TransitionToState(transitions[i].TrueState);
+                }
+                else
+                {
+                    controller.TransitionToState(transitions[i].FalseState);
+                }
+
+            }
+        }
+    }
 }

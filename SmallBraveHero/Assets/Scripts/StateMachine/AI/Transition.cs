@@ -1,11 +1,21 @@
-﻿using System.Collections;
+﻿using Code.StateMachine.AI.Decisions;
+using Code.StateMachine.AI.States;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Transition
+namespace Code.StateMachine.AI
 {
-    [SerializeField] AIDecision decision;
+    [System.Serializable]
+    public class Transition
+    {
+        public AIDecision Decision { get => decision; }
+        [SerializeField] AIDecision decision;
 
-    [SerializeField] AIState trueState;
-    [SerializeField] AIState falseState;
+
+        [SerializeField] AIState trueState; // if decision is true;
+        public AIState TrueState { get => trueState; }
+        [SerializeField] AIState falseState; // if desision is false;
+        public AIState FalseState { get => falseState; }
+    }
 }

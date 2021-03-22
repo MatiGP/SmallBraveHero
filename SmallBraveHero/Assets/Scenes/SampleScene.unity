@@ -855,7 +855,7 @@ GameObject:
   - component: {fileID: 908080343}
   - component: {fileID: 908080345}
   - component: {fileID: 908080344}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -932,7 +932,7 @@ MonoBehaviour:
   jumpDuration: 1
   wallPosOffset: 0.2
   groundDetector: {fileID: 712254519}
-  groundDetectorSize: {x: 0.7, y: 0.24}
+  groundDetectorSize: {x: 0.7, y: 0.18}
   ceilingDetector: {fileID: 276330061}
   ceilingDetectorSize: {x: 0.7, y: 0.09}
   wallDetectorRight: {fileID: 1873386571}
@@ -3652,7 +3652,7 @@ Animator:
   m_GameObject: {fileID: 1988604280}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3186e8c7fd9240747be47635e034ae61, type: 2}
+  m_Controller: {fileID: 9100000, guid: c67addf1753992b41a54f7b860579926, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4776,8 +4776,11 @@ MonoBehaviour:
   wallDetectorRight: {fileID: 1273163498}
   wallDetectorLeft: {fileID: 760141047}
   wallDetectorSize: {x: 0.12, y: 0.85}
-  tauntRange: 0
-  tauntDuration: 0
+  tauntRange: 9
+  tauntDuration: 1
+  patrolMoveSpeed: 0.5
+  currentState: {fileID: 11400000, guid: bc7db0c9ab3f268438bd6d4dcef4156c, type: 2}
+  remainState: {fileID: 11400000, guid: e74564ff23ba9634d83a1f293a420a73, type: 2}
 --- !u!50 &2124411930
 Rigidbody2D:
   serializedVersion: 4
@@ -4833,7 +4836,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2124411928}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.403, y: -8.102, z: 0}
+  m_LocalPosition: {x: 2.403, y: -8.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1988604281}

@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public abstract class AIAction : ScriptableObject
+namespace Code.StateMachine.AI.Actions
 {
-    public abstract void Act(AIController controller);
+    public abstract class AIAction : ScriptableObject
+    {
+        public abstract void Act(AIController controller);
+    }
+
+    enum EAction { Idle, Run, Death, Attack }
 }

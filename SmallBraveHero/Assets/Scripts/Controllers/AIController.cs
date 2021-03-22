@@ -1,54 +1,58 @@
-﻿using System.Collections;
+﻿using Code.StateMachine.AI.States;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AIController : CharacterController
+
+namespace Code.StateMachine.AI
 {
-    public float TauntRange { get => tauntRange; }
-    [SerializeField] float tauntRange;
-    public float TauntDuration { get => tauntDuration; }
-    [SerializeField] float tauntDuration;
-
-    public StateMachine stateMachine { get; private set; }
-
-    private void Awake()
+    public class AIController : CharacterController
     {
-        stateMachine = new StateMachine();
-        characterAnimPrefix = "Enemy_";
-        direction = 1;
+        public float TauntRange { get => tauntRange; }
+        [SerializeField] float tauntRange;
+        public float TauntDuration { get => tauntDuration; }
+        [SerializeField] float tauntDuration;
+        public float PatrolMoveSpeed { get => patrolMoveSpeed; }
+        [SerializeField] float patrolMoveSpeed;
+
+        public PlayerController Target { get; private set; }
+
+        [SerializeField] AIState currentState;
+        [SerializeField] AIState remainState;
+
+        private void Awake()
+        {
+
+            characterAnimPrefix = "Enemy_";
+            direction = 1;
+        }
+
+        private void Update()
+        {
+            currentState.UpdateState(this);
+        }
+
+        private void Start()
+        {
+            CalculateGravity();
+        }
+       
+        private void FixedUpdate()
+        {
+            CheckForCollisions();
+        }
+
+        public void SetTarget(PlayerController target)
+        {
+            Target = target;
+        }
+
+        public void TransitionToState(AIState nextState)
+        {
+            if(nextState != remainState)
+            {
+                currentState = nextState;
+            }
+        }        
     }
-
-    private void Start()
-    {
-        stateMachine.Initialize();
-
-        
-        
-        stateMachine.Start();
-
-        CalculateGravity();
-    }
-
-    private void Update()
-    {
-        
-        stateMachine.CurrentState.UpdateLogic();
-        
-        
-    }
-
-    private void LateUpdate()
-    {
-        stateMachine.CurrentState.UpdateInput();
-    }
-
-    private void FixedUpdate()
-    {
-        CheckForCollisions();
-
-        stateMachine.CurrentState.UpdatePhysics();
-    }
-
 }
-
-enum EEnemyType { Melee, Ranged }
