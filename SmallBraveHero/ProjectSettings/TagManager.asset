@@ -44,3 +44,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Foreground
+    uniqueID: 3766298203
+    locked: 0
+  - name: Furnishing
+    uniqueID: 2354745789
+    locked: 0
+  - name: Characters
+    uniqueID: 245677969
+    locked: 0
+  - name: Items
+    uniqueID: 3079110885
+    locked: 0

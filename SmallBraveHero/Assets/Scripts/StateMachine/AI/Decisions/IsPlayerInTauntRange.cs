@@ -12,13 +12,11 @@ public class IsPlayerInTauntRange : AIDecision
         PlayerController pc = LookForPlayer(controller);
 
         if(pc == null)
-        {
-            Debug.Log("No player");
+        {          
             return false;
         }
         else
         {
-            Debug.Log("Found Player!");
             controller.SetTarget(pc);
             return true;
         }

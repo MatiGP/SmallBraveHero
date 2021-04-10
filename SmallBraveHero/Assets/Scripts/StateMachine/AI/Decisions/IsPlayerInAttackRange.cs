@@ -11,7 +11,12 @@ namespace Code.StateMachine.AI.Decisions
     {
         public override bool Decide(AIController controller)
         {
-            return true;
+            return IsInAttackRange(controller);
+        }
+
+        bool IsInAttackRange(AIController controller)
+        {
+            return Vector2.Distance(controller.transform.position, controller.Target.transform.position) <= controller.AttackRange;           
         }
     }
 }

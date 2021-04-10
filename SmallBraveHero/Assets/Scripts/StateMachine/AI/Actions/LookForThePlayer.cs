@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 namespace Code.StateMachine.AI.Actions
 {
-    [CreateAssetMenu(menuName = "AI/Actions/Fall")]
-    public class Fall : AIAction
+    [CreateAssetMenu(menuName = "AI/Actions/Look For Player")]
+    public class LookForThePlayer : AIAction
     {
+        [SerializeField] float lookDelay;
+
         public override void Act(AIController controller)
         {
-            controller.transform.position += Vector3.down * controller.Gravity * Time.deltaTime;
+            Debug.Log("Looking for player");
         }
+
+        
     }
 }

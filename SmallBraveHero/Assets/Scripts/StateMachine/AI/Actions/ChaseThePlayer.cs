@@ -8,11 +8,8 @@ namespace Code.StateMachine.AI.Actions
     public class ChaseThePlayer : AIAction
     {
         public override void Act(AIController controller)
-        {
-            
-
-            controller.transform.position += Vector3.right * controller.MoveSpeed * Time.deltaTime;
-
+        {          
+            controller.transform.position += Vector3.right * controller.MoveSpeed * controller.Direction * Time.deltaTime;
         }
 
 

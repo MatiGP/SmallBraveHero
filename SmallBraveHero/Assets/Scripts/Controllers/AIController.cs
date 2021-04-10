@@ -8,21 +8,25 @@ namespace Code.StateMachine.AI
 {
     public class AIController : CharacterController
     {
-        public float TauntRange { get => tauntRange; }
+        [Header("Enemy Settings")]
         [SerializeField] float tauntRange;
+        public float TauntRange { get => tauntRange; }      
         public float TauntDuration { get => tauntDuration; }
         [SerializeField] float tauntDuration;
         public float PatrolMoveSpeed { get => patrolMoveSpeed; }
         [SerializeField] float patrolMoveSpeed;
+        public float AttackRange { get => attackRange; }
+        [SerializeField] float attackRange;
 
         public PlayerController Target { get; private set; }
 
+        [Header("States")]
         [SerializeField] AIState currentState;
         [SerializeField] AIState remainState;
 
         private void Awake()
         {
-
+            base.Awake();
             characterAnimPrefix = "Enemy_";
             direction = 1;
         }

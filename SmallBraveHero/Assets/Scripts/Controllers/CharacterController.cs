@@ -12,6 +12,8 @@ public abstract class CharacterController : MonoBehaviour
     [Header("General References")]
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] BoxCollider2D characterCollider;
+    [SerializeField] Health characterHealth;
+    public Health CharacterHealth { get => characterHealth; }
     
     public Animator CharacterAnimator { get => characterAnimator; }
     [SerializeField] Animator characterAnimator;
@@ -60,6 +62,11 @@ public abstract class CharacterController : MonoBehaviour
     [SerializeField] Transform wallDetectorRight;
     [SerializeField] Transform wallDetectorLeft;
     [SerializeField] Vector2 wallDetectorSize;
+
+    protected void Awake()
+    {
+        characterHealth = GetComponent<Health>();
+    }
 
     protected void CheckForCollisions()
     {

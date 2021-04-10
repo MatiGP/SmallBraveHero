@@ -16,6 +16,7 @@ public class PlayerController : CharacterController
 
     private void Awake()
     {
+        base.Awake();
         stateMachine = new StateMachine();
         characterAnimPrefix = "Player_";
     }

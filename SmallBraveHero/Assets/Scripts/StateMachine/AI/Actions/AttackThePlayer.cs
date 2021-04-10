@@ -10,7 +10,9 @@ namespace Code.StateMachine.AI.Actions
     {
         public override void Act(AIController controller)
         {
-            
+            Debug.Log($"Attacking :{controller.Target.name}");
+
+            controller.Target.CharacterHealth.TakeDamage(2);
         }
     }
 }
