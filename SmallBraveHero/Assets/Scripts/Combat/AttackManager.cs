@@ -9,5 +9,8 @@ public class AttackManager : MonoBehaviour
     private float currentTimeToAttack;
 
     
-    
+    public void HitEvent()
+    {
+        Debug.Log("EnemyAttacked!");
+    }
 }

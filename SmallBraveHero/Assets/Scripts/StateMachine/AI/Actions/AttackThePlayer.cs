@@ -13,6 +13,7 @@ namespace Code.StateMachine.AI.Actions
             Debug.Log($"Attacking :{controller.Target.name}");
 
             controller.Target.CharacterHealth.TakeDamage(2);
+            controller.CharacterAnimator.Play(controller.CharacterAnimPrefix + EAction.MeleeAttack);
         }
     }
 }

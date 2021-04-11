@@ -20,6 +20,9 @@ namespace Code.StateMachine.AI
 
         public PlayerController Target { get; private set; }
 
+        [SerializeField] AttackManager attackManager;
+        public AttackManager AttackManager { get => attackManager; }
+
         [Header("States")]
         [SerializeField] AIState currentState;
         [SerializeField] AIState remainState;

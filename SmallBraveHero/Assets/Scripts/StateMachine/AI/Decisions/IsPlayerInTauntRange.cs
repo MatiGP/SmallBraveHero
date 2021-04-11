@@ -17,6 +17,7 @@ public class IsPlayerInTauntRange : AIDecision
         }
         else
         {
+            Debug.Log("Target found!");
             controller.SetTarget(pc);
             return true;
         }

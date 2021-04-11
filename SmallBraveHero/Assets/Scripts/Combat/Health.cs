@@ -20,6 +20,7 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int damageAmount)
     {
+        Debug.Log($"Taking damage: {-damageAmount}");
         currentHealth -= Mathf.Clamp(damageAmount - defence, 0, int.MaxValue);
     }
 
