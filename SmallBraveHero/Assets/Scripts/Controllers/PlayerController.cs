@@ -38,6 +38,7 @@ public class PlayerController : CharacterController
     private void Update()
     {
         direction = Input.GetAxisRaw("Horizontal");
+        
         isJumping = Input.GetAxis("Jump") > 0;
 
         stateMachine.CurrentState.UpdateInput();
