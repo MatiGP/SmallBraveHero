@@ -12,6 +12,13 @@ public class PlayerController : CharacterController
     [Header("WallSlides")]
     [SerializeField] float wallSlideSpeed;
 
+    public float ActiveDodgeSpeed { get => dodgeSpeed; }
+    [Header("Dodges")]
+    [SerializeField] float dodgeSpeed;
+    public float ActiveDodgeDuration { get => dodgeDuration; }
+    [SerializeField] float dodgeDuration;
+    public bool IsDodging { get; private set; }
+
     public StateMachine stateMachine { get; private set; }
 
     private void Awake()
@@ -29,6 +36,7 @@ public class PlayerController : CharacterController
         stateMachine.AddState(EStateType.Idle, new IdleState(this, stateMachine));
         stateMachine.AddState(EStateType.Jump, new JumpState(this, stateMachine));
         stateMachine.AddState(EStateType.Fall, new FallState(this, stateMachine));
+        stateMachine.AddState(EStateType.ActiveDodge, new ActiveDodge(this, stateMachine));
 
         stateMachine.Start();
 
@@ -40,6 +48,8 @@ public class PlayerController : CharacterController
         direction = Input.GetAxisRaw("Horizontal");
         
         isJumping = Input.GetAxis("Jump") > 0;
+
+        IsDodging = Input.GetKeyDown(KeyCode.LeftShift);
 
         stateMachine.CurrentState.UpdateInput();
         stateMachine.CurrentState.UpdateLogic();

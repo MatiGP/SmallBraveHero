@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FallState : BaseState
 {
-    public FallState(CharacterController controller, StateMachine stateMachine) : base(controller, stateMachine)
+    public FallState(PlayerController controller, StateMachine stateMachine) : base(controller, stateMachine)
     {
     }
 
@@ -50,7 +50,12 @@ public class FallState : BaseState
             }
 
             stateMachine.ChangeState(EStateType.Idle);
-        }       
+        }
+
+        if (controller.IsDodging)
+        {
+            stateMachine.ChangeState(EStateType.ActiveDodge);
+        }
 
         controller.transform.position += movementVector * Time.deltaTime;
     }

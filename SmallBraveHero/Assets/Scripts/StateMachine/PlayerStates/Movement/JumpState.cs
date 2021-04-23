@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class JumpState : BaseState
 {
-    public JumpState(CharacterController controller, StateMachine stateMachine) : base(controller, stateMachine)
+    public JumpState(PlayerController controller, StateMachine stateMachine) : base(controller, stateMachine)
     {
     }
 
@@ -38,6 +38,11 @@ public class JumpState : BaseState
             stateMachine.ChangeState(EStateType.Fall);
         }
 
+        if (controller.IsDodging)
+        {
+            stateMachine.ChangeState(EStateType.ActiveDodge);
+        }
+
         if (controller.IsTouchingLeftWall && controller.Direction < 0)
         {
             movementVector.x = 0;
@@ -47,6 +52,8 @@ public class JumpState : BaseState
         {
             movementVector.x = 0;
         }
+
+        
 
         controller.transform.position += movementVector * Time.deltaTime;
     }

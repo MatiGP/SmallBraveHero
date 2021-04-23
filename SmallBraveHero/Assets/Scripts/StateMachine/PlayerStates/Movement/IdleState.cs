@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IdleState : BaseState
 {
-    public IdleState(CharacterController controller, StateMachine stateMachine) : base(controller, stateMachine)
+    public IdleState(PlayerController controller, StateMachine stateMachine) : base(controller, stateMachine)
     {
     }
 
@@ -39,6 +39,11 @@ public class IdleState : BaseState
         if (!controller.IsGrounded)
         {
             stateMachine.ChangeState(EStateType.Fall);
+        }
+
+        if (controller.IsDodging)
+        {
+            stateMachine.ChangeState(EStateType.ActiveDodge);
         }
     }
 

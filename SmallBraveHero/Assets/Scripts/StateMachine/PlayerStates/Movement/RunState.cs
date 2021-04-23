@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RunState : BaseState
 {
-    public RunState(CharacterController controller, StateMachine stateMachine) : base(controller, stateMachine)
+    public RunState(PlayerController controller, StateMachine stateMachine) : base(controller, stateMachine)
     {
     }
 
@@ -51,6 +51,11 @@ public class RunState : BaseState
         if(controller.Direction == 0)
         {
             stateMachine.ChangeState(EStateType.Idle);
+        }
+
+        if (controller.IsDodging)
+        {
+            stateMachine.ChangeState(EStateType.ActiveDodge);
         }
 
         controller.transform.position += movementVector * Time.deltaTime;

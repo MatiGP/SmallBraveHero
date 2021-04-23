@@ -5,10 +5,10 @@ using UnityEngine;
 public abstract class BaseState
 {
     protected Vector3 movementVector;
-    protected CharacterController controller;
+    protected PlayerController controller;
     protected StateMachine stateMachine;
 
-    public BaseState(CharacterController controller, StateMachine stateMachine)
+    public BaseState(PlayerController controller, StateMachine stateMachine)
     {
         this.controller = controller;
         this.stateMachine = stateMachine;

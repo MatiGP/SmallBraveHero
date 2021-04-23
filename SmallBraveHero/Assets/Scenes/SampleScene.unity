@@ -942,6 +942,8 @@ MonoBehaviour:
   wallDetectorSize: {x: 0.09, y: 0.85}
   wallJumpHeight: 4
   wallSlideSpeed: 1
+  dodgeSpeed: 20
+  dodgeDuration: 0.075
 --- !u!50 &908080345
 Rigidbody2D:
   serializedVersion: 4

@@ -11,6 +11,7 @@ public abstract class CharacterController : MonoBehaviour
 
     [Header("General References")]
     [SerializeField] SpriteRenderer spriteRenderer;
+    public bool IsFacingRight { get => spriteRenderer.flipX; }
     [SerializeField] BoxCollider2D characterCollider;
     [SerializeField] Health characterHealth;
     public Health CharacterHealth { get => characterHealth; }
