@@ -11,26 +11,31 @@ public class WallSlide : BaseState
 
     public override void Enter()
     {
-        throw new System.NotImplementedException();
+        
     }
 
     public override void Exit()
     {
-        throw new System.NotImplementedException();
+        
     }
 
     public override void UpdateInput()
     {
-        throw new System.NotImplementedException();
+        movementVector.y = -controller.WallSlideSpeed;
+
+        controller.transform.position += movementVector * Time.deltaTime;
     }
 
     public override void UpdateLogic()
     {
-        throw new System.NotImplementedException();
+        if (controller.IsGrounded)
+        {
+            stateMachine.ChangeState(EStateType.Idle);
+        }
     }
 
     public override void UpdatePhysics()
     {
-        throw new System.NotImplementedException();
+        
     }
 }

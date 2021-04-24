@@ -64,7 +64,7 @@ public abstract class CharacterController : MonoBehaviour
     [SerializeField] Transform wallDetectorLeft;
     [SerializeField] Vector2 wallDetectorSize;
 
-    protected void Awake()
+    protected virtual void Awake()
     {
         characterHealth = GetComponent<Health>();
     }

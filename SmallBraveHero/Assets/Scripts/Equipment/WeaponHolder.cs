@@ -9,20 +9,19 @@ namespace Code.Equipment
     {
         [SerializeField] private SpriteRenderer weaponRenderer;
         [SerializeField] private Animator animator;
+        [SerializeField] private Weapon weapon;
 
-        private bool HasWeapon { get => currentWeapon != null; }
-        private Weapon currentWeapon;
+        public bool HasWeapon { get => weapon != null; }
         
         public void EquipWeapon(Weapon weapon)
         {
-            currentWeapon = weapon;
-            weaponRenderer.sprite = weapon.ItemSprite;
+            
             animator.Play("Idle");
         }
 
         public void DequipWeapon()
         {
-            currentWeapon = null;
+            
         }
 
         public void Attack()

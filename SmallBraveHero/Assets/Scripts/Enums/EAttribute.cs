@@ -8,7 +8,6 @@ namespace Code.Combat
     {
         Strength,
         Agility,
-        Intelect,
-        MaxHealth
+        Intelect
     }
 }

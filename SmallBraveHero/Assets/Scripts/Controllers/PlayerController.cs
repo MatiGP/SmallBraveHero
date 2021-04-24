@@ -21,7 +21,7 @@ public class PlayerController : CharacterController
 
     public StateMachine stateMachine { get; private set; }
 
-    private void Awake()
+    protected override void Awake()
     {
         base.Awake();
         stateMachine = new StateMachine();

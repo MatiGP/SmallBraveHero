@@ -855,6 +855,7 @@ GameObject:
   - component: {fileID: 908080343}
   - component: {fileID: 908080345}
   - component: {fileID: 908080344}
+  - component: {fileID: 908080347}
   - component: {fileID: 908080346}
   m_Layer: 10
   m_Name: Player
@@ -974,11 +975,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 908080341}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75fbca24df992e04b83f60fc40e033c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 33a0f49011bbde846a6f415a347ba1a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  defence: 1
+  maxHealth: 5
+  defence: 0
+  playerStats:
+  - attribute: 0
+    value: 1
+  - attribute: 1
+    value: 1
+  - attribute: 2
+    value: 1
+--- !u!114 &908080347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908080341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf7b49f55558fef4d8fc0e92f12a33bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponHolder: {fileID: 994605780}
 --- !u!1 &994605778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1024,8 +1045,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13bad8e44817b9c4bba3ade481f7460d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponRenderer: {fileID: 0}
-  animator: {fileID: 0}
+  weaponRenderer: {fileID: 1658692377}
+  animator: {fileID: 994605781}
+  weapon: {fileID: 0}
 --- !u!95 &994605781
 Animator:
   serializedVersion: 3

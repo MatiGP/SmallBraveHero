@@ -11,5 +11,15 @@ namespace Code.Combat
         public EAttribute Attribute { get => attribute; }
         [SerializeField] int value;
         public int Value { get => value; }
+
+        public void Increase(int val)
+        {
+            value += val;
+        }
+
+        public void Decrease(int val)
+        {
+            value -= val;
+        }
     }
 }

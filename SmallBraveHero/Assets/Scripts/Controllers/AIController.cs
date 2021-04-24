@@ -27,7 +27,7 @@ namespace Code.StateMachine.AI
         [SerializeField] AIState currentState;
         [SerializeField] AIState remainState;
 
-        private void Awake()
+        protected override void Awake()
         {
             base.Awake();
             characterAnimPrefix = "Enemy_";

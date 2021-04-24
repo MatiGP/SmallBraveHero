@@ -13,19 +13,20 @@ public class Health : MonoBehaviour
     [SerializeField] int defence;
     public int Defence { get { return defence; } }
 
-    private void Awake()
+    protected virtual void Awake()
     {
         currentHealth = maxHealth;
     }
 
     public void TakeDamage(int damageAmount)
     {
-        Debug.Log($"Taking damage: {-damageAmount}");
+        Debug.Log($"Taking damage: -{damageAmount}");
         currentHealth -= Mathf.Clamp(damageAmount - defence, 0, int.MaxValue);
     }
 
     public void Heal(int healAmount)
     {
+        Debug.Log($"Healing damage: +{healAmount}");
         currentHealth = Mathf.Clamp(currentHealth + healAmount, 1, maxHealth);
     }
 }

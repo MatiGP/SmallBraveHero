@@ -11,7 +11,9 @@ namespace Code.Equipment.Items
 
         [SerializeField] protected string itemName;
         public string ItemName { get => itemName; }
-    }
 
+        public abstract void Use(Inventory inventory);
+    }
+    
     
 }
