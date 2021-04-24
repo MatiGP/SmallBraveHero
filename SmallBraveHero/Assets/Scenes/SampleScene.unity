@@ -1047,7 +1047,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponRenderer: {fileID: 1658692377}
   animator: {fileID: 994605781}
-  weapon: {fileID: 0}
+  currentWeapon: {fileID: 11400000, guid: 08e6d0f1a6f50d34fa099235cd732e55, type: 2}
 --- !u!95 &994605781
 Animator:
   serializedVersion: 3
@@ -1622,7 +1622,7 @@ SpriteRenderer:
   m_SortingLayerID: -1215856411
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -23471612034550626, guid: cf26e8f34998fb64eb6f161e9cebb201, type: 3}
+  m_Sprite: {fileID: -3195111309885099143, guid: cf26e8f34998fb64eb6f161e9cebb201, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

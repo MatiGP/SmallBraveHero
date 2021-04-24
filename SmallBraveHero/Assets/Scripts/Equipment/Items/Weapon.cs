@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Code.Equipment.Items
 {
+    [CreateAssetMenu(fileName = "NewWeapon", menuName = "Items/Weapon")]
     public class Weapon : Item
     {
         [SerializeField] private int weaponMinDamage;

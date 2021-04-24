@@ -9,13 +9,30 @@ namespace Code.Equipment
     {
         [SerializeField] private SpriteRenderer weaponRenderer;
         [SerializeField] private Animator animator;
-        [SerializeField] private Weapon weapon;
+        [SerializeField] private Weapon currentWeapon;
 
-        public bool HasWeapon { get => weapon != null; }
-        
+        public bool HasWeapon { get => currentWeapon != null; }
+
+        float attackDelay;
+
+        private void Update()
+        {
+            if(attackDelay > 0)
+            {
+                attackDelay -= Time.deltaTime;
+                return;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                Attack();
+            }
+        }
+
         public void EquipWeapon(Weapon weapon)
         {
-            
+            currentWeapon = weapon;
+            weaponRenderer.sprite = weapon.ItemSprite;
             animator.Play("Idle");
         }
 
@@ -30,7 +47,7 @@ namespace Code.Equipment
             {
                 return;
             }
-
+            attackDelay = currentWeapon.WeaponSpeed;
             animator.Play("Swing");
         }
     }
