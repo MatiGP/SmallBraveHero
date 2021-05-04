@@ -8,10 +8,30 @@ namespace Code.StateMachine.AI.Actions
     public class ChaseThePlayer : AIAction
     {
         public override void Act(AIController controller)
-        {          
-            controller.transform.position += Vector3.right * controller.MoveSpeed * controller.Direction * Time.deltaTime;
+        {
+            controller.AttackManager.UnlockCharacter();
+
+            controller.CharacterAnimator.Play(controller.CharacterAnimPrefix + EAction.Run);
+
+            int direction = GetPlayerDirection(controller);
+
+            controller.transform.position += Vector3.right * controller.MoveSpeed * direction * Time.deltaTime;
+
+            controller.SetDirection(direction);
+            controller.FlipSprite();
         }
 
+        public int GetPlayerDirection(AIController controller)
+        {
+            if (controller.Target.transform.position.x > controller.transform.position.x)
+            {
+                return 1;
+            }
+            else
+            {
+                return -1;
+            }
+        }
 
     }
 }

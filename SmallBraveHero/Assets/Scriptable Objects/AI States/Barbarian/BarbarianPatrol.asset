@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f1339925b07213468b50ac9bd995527, type: 3}
   m_Name: BarbarianPatrol
   m_EditorClassIdentifier: 
-  actions: []
-  transitions: []
+  action: {fileID: 11400000, guid: 54f47ced51eced94da10a88e2ae063a5, type: 2}
+  transitions:
+  - decision: {fileID: 11400000, guid: 28956d60dbeccb645877b3f286211cb8, type: 2}
+    trueState: {fileID: 11400000, guid: d1d2ae25c1cdbcb4f8f07bb22b8625f8, type: 2}
+    falseState: {fileID: 11400000, guid: e74564ff23ba9634d83a1f293a420a73, type: 2}

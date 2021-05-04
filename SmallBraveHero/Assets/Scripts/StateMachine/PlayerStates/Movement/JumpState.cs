@@ -23,10 +23,7 @@ public class JumpState : BaseState
     public override void UpdateInput()
     {
         movementVector.x = controller.Direction * controller.MoveSpeed;
-        movementVector.y -= controller.Gravity * Time.deltaTime;
-
-        
-
+        movementVector.y -= controller.Gravity * Time.deltaTime;      
     }
 
     public override void UpdateLogic()
@@ -53,6 +50,10 @@ public class JumpState : BaseState
             movementVector.x = 0;
         }
 
+        if (controller.IsTouchingCeiling)
+        {
+            stateMachine.ChangeState(EStateType.Fall);
+        }
         
 
         controller.transform.position += movementVector * Time.deltaTime;

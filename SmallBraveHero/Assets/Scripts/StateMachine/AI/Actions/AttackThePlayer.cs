@@ -19,6 +19,12 @@ namespace Code.StateMachine.AI.Actions
         {
             Debug.Log($"Attacking :{controller.Target.name}");
 
+            if (controller.AttackManager.IsAttackCompleted)
+            {
+                Debug.Log("Other Attacking Action is in progress");
+                return;
+            }
+
             if (isRanged)
             {
                 //TODO: IMPLEMENT ME PLS
@@ -27,7 +33,12 @@ namespace Code.StateMachine.AI.Actions
             {
                 if (hasMultipleAttacks)
                 {
-                    controller.CharacterAnimator.Play(controller.CharacterAnimPrefix + EAction.MeleeAttack + Random.Range(0, attackCount+1));
+                    controller.AttackManager.DoAttack(controller.CharacterAnimPrefix + EAction.MeleeAttack + Random.Range(0, attackCount));
+                    Debug.Log($"Attack name : {controller.CharacterAnimPrefix + EAction.MeleeAttack + Random.Range(0, attackCount)}");
+                }
+                else
+                {
+                    controller.CharacterAnimator.Play(controller.CharacterAnimPrefix + EAction.MeleeAttack + "0");
                 }
             }
             

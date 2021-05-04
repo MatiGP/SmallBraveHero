@@ -60,6 +60,11 @@ namespace Code.StateMachine.AI
             {
                 currentState = nextState;
             }
-        }        
+        }
+        
+        public void SetDirection(float value)
+        {
+            direction = value;
+        }
     }
 }

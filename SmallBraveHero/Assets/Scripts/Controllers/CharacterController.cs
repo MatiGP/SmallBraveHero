@@ -79,7 +79,7 @@ public abstract class CharacterController : MonoBehaviour
 
     public void FixCharacterGroundPosition()
     {
-        float floorPos = Physics2D.Raycast(transform.position, transform.position + Vector3.down, 5f, groundLayer).point.y;
+        float floorPos = Physics2D.OverlapBox(groundDetector.position, groundDetectorSize, 0f, groundLayer).ClosestPoint(transform.position).y;
         transform.position = new Vector3(transform.position.x, floorPos + (characterCollider.size.y / 2));
     }
 

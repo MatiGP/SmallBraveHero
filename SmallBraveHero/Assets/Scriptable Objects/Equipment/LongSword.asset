@@ -17,3 +17,5 @@ MonoBehaviour:
   weaponMinDamage: 2
   weaponMaxDamage: 4
   weaponSpeed: 1
+  weaponColliderSize: {x: 0.11, y: 0.61}
+  weaponColliderOffset: {x: 0, y: 0.34, z: 0}

@@ -8,7 +8,7 @@ namespace Code.StateMachine.AI.States
     [CreateAssetMenu(menuName ="AI/State")]
     public class AIState : ScriptableObject
     {
-        [SerializeField] AIAction[] actions;
+        [SerializeField] AIAction action;
         [SerializeField] Transition[] transitions;
 
         public void UpdateState(AIController controller)
@@ -20,10 +20,9 @@ namespace Code.StateMachine.AI.States
 
         private void DoActions(AIController controller)
         {
-            for (int i = 0; i < actions.Length; i++)
-            {
-                actions[i].Act(controller);
-            }
+            
+            action.Act(controller);
+            
         }
 
         private void CheckTransitions(AIController controller)

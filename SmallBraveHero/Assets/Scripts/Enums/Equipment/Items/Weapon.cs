@@ -15,6 +15,12 @@ namespace Code.Equipment.Items
         [SerializeField] private float weaponSpeed;
         public float WeaponSpeed { get => weaponSpeed; }
 
+        [SerializeField] private Vector2 weaponColliderSize;
+        public Vector2 WeaponColliderSize { get => weaponColliderSize; }
+
+        [SerializeField] private Vector3 weaponColliderOffset;
+        public Vector3 WeaponColliderOffset { get => weaponColliderOffset; }
+
         public override void Use(Inventory inventory)
         {
             Inventory.Instance.WeaponHolder.EquipWeapon(this);

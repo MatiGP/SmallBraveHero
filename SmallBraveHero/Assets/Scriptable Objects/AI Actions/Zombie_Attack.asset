@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f1339925b07213468b50ac9bd995527, type: 3}
-  m_Name: BarbarianSpearAttack
+  m_Script: {fileID: 11500000, guid: 8e7050eb928fa0c4981c944be3c02915, type: 3}
+  m_Name: Zombie_Attack
   m_EditorClassIdentifier: 
-  actions: []
-  transitions: []
+  isRanged: 0
+  hasMultipleAttacks: 0
+  attackCount: 0

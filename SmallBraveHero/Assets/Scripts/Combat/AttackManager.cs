@@ -8,6 +8,8 @@ public class AttackManager : MonoBehaviour
     [SerializeField] AIController controller;
     [SerializeField] AttackCollider[] attackColliders;
 
+    private bool isAttackCompleted;
+    public bool IsAttackCompleted { get => isAttackCompleted; }
 
     //Attack Index => Jaki AttackCollider ma być użyty.
     public void HitEvent(int attackIndex)
@@ -32,6 +34,22 @@ public class AttackManager : MonoBehaviour
         }
 
     }
+
+    public void DoAttack(string attackName)
+    {
+        controller.CharacterAnimator.Play(attackName);
+    }
+
+    public void LockCharacter()
+    {
+        isAttackCompleted = true;
+    }
+
+    public void UnlockCharacter()
+    {
+        isAttackCompleted = false;
+    }
+
     //Gizmosy by zwizualizować collidery ataku.
     private void OnDrawGizmosSelected()
     {

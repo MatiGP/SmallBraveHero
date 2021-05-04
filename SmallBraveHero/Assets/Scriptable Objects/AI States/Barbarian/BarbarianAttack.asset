@@ -10,7 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f1339925b07213468b50ac9bd995527, type: 3}
-  m_Name: BarbarianFistAttack
+  m_Name: BarbarianAttack
   m_EditorClassIdentifier: 
-  actions: []
-  transitions: []
+  action: {fileID: 11400000, guid: 69366791d6444e64780fd1fb9fef2916, type: 2}
+  transitions:
+  - decision: {fileID: 11400000, guid: 31bd08a1ebd1dc8468946ea539d9c82b, type: 2}
+    trueState: {fileID: 11400000}
+    falseState: {fileID: 11400000, guid: d1d2ae25c1cdbcb4f8f07bb22b8625f8, type: 2}
