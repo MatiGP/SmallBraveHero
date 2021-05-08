@@ -5,19 +5,19 @@ using UnityEngine;
 public abstract class CharacterController : MonoBehaviour
 {
     [Header("Layers")]
-    [SerializeField] LayerMask groundLayer;
-    [SerializeField] LayerMask wallLayer;
+    [SerializeField] protected LayerMask groundLayer;
+    [SerializeField] protected LayerMask wallLayer;
     public bool Gizmo;
 
     [Header("General References")]
-    [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] private SpriteRenderer spriteRenderer = null;
     public bool IsFacingRight { get => spriteRenderer.flipX; }
-    [SerializeField] BoxCollider2D characterCollider;
-    [SerializeField] Health characterHealth;
+    [SerializeField] private BoxCollider2D characterCollider = null;
+    [SerializeField] private Health characterHealth = null;
     public Health CharacterHealth { get => characterHealth; }
     
     public Animator CharacterAnimator { get => characterAnimator; }
-    [SerializeField] Animator characterAnimator;
+    [SerializeField] Animator characterAnimator = null;
 
     public float MoveSpeed { get => moveSpeed; }
     [Header("Movement Settings")]
@@ -124,7 +124,7 @@ public abstract class CharacterController : MonoBehaviour
         }
     }
 
-    protected void OnDrawGizmos()
+    protected virtual void OnDrawGizmos()
     {
         if (!Gizmo) return;
 

@@ -29,6 +29,12 @@ namespace Code.StateMachine.AI.Actions
                 controller.FlipSprite();
             }
 
+            if (controller.ReachedEndOfPlatform)
+            {
+                controller.ChangeDirection();
+                controller.FlipSprite();
+            }
+
             return Vector3.right * controller.PatrolMoveSpeed * controller.Direction * Time.deltaTime;
         }
         

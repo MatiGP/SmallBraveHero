@@ -9,23 +9,29 @@ namespace Code.StateMachine.AI
     public class AIController : CharacterController
     {
         [Header("Enemy Settings")]
-        [SerializeField] float tauntRange;
+        [SerializeField] private float tauntRange = 1;
         public float TauntRange { get => tauntRange; }      
         public float TauntDuration { get => tauntDuration; }
-        [SerializeField] float tauntDuration;
+        [SerializeField] private float tauntDuration = 1;
         public float PatrolMoveSpeed { get => patrolMoveSpeed; }
-        [SerializeField] float patrolMoveSpeed;
+        [SerializeField] private float patrolMoveSpeed = 2;
         public float AttackRange { get => attackRange; }
-        [SerializeField] float attackRange;
+        [SerializeField] private float attackRange = 0.5f;
+        [SerializeField] private Vector3 platformCheckOffset = new Vector3();
 
         public PlayerController Target { get; private set; }
 
-        [SerializeField] AttackManager attackManager;
+        [SerializeField] private AttackManager attackManager = null;
         public AttackManager AttackManager { get => attackManager; }
 
         [Header("States")]
-        [SerializeField] AIState currentState;
-        [SerializeField] AIState remainState;
+        [SerializeField] private AIState currentState = null;
+        [SerializeField] private AIState remainState = null;
+
+        private bool reachedEndOfPlatform = false;
+        public bool ReachedEndOfPlatform { get => reachedEndOfPlatform; }
+
+        private Vector3 checkPosition = new Vector3();
 
         protected override void Awake()
         {
@@ -47,6 +53,18 @@ namespace Code.StateMachine.AI
         private void FixedUpdate()
         {
             CheckForCollisions();
+
+            Collider2D groundCollider = null;
+
+            checkPosition = transform.position;
+            checkPosition.x += platformCheckOffset.x * direction;
+            checkPosition.y += platformCheckOffset.y;
+
+            groundCollider = Physics2D.OverlapCircle(checkPosition, 0.2f, groundLayer);
+
+            reachedEndOfPlatform = groundCollider == null;
+
+
         }
 
         public void SetTarget(PlayerController target)
@@ -65,6 +83,16 @@ namespace Code.StateMachine.AI
         public void SetDirection(float value)
         {
             direction = value;
+        }
+
+        protected override void OnDrawGizmos()
+        {
+            base.OnDrawGizmos();
+
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawLine(transform.position, transform.position + Vector3.right * tauntRange);
+            Gizmos.color = Color.white;
+            Gizmos.DrawWireSphere(checkPosition, 0.2f);
         }
     }
 }

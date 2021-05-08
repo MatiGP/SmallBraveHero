@@ -18,7 +18,13 @@ public class ShowMultipleAttacsArray : Editor
         AttackThePlayer attackThePlayer = target as AttackThePlayer;
 
         attackThePlayer.isRanged = GUILayout.Toggle(attackThePlayer.isRanged, "Is Ranged");
-
+        
+        EditorGUILayout.BeginHorizontal();
+        if (attackThePlayer.isRanged)
+        {
+            attackThePlayer.projectileID = EditorGUILayout.IntField("Projectile ID: ", attackThePlayer.projectileID);
+        }
+        EditorGUILayout.EndHorizontal();
         attackThePlayer.hasMultipleAttacks = GUILayout.Toggle(attackThePlayer.hasMultipleAttacks, "Has Multiple Attacks");
 
         EditorGUILayout.BeginHorizontal();
@@ -30,7 +36,11 @@ public class ShowMultipleAttacsArray : Editor
         {
             attackThePlayer.attackCount = 0;
         }
+
+        
         EditorGUILayout.EndHorizontal();
         EditorGUILayout.EndVertical();
+
+        EditorUtility.SetDirty(target);
     }
 }

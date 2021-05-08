@@ -7,9 +7,11 @@ namespace Code.StateMachine.AI.Actions
 {
     [CreateAssetMenu(menuName = "AI/Actions/AttackThePlayer")]
     public class AttackThePlayer : AIAction
-    { 
+    {
         [HideInInspector()]
         public bool isRanged;
+        [HideInInspector()]
+        public int projectileID;
         [HideInInspector()]
         public bool hasMultipleAttacks;
         [HideInInspector()]
@@ -19,15 +21,22 @@ namespace Code.StateMachine.AI.Actions
         {
             Debug.Log($"Attacking :{controller.Target.name}");
 
+            controller.AttackManager.SetDirection(controller.Direction);
+
+            Debug.Log($"Setting attack direction {controller.Direction} ");
+
             if (controller.AttackManager.IsAttackCompleted)
             {
                 Debug.Log("Other Attacking Action is in progress");
                 return;
             }
 
+            Debug.Log(isRanged);
+
             if (isRanged)
             {
-                //TODO: IMPLEMENT ME PLS
+                controller.AttackManager.DoAttack(controller.CharacterAnimPrefix + EAction.RangedAttack + "0");
+                Debug.Log($"Ranged Attack name : {controller.CharacterAnimPrefix + EAction.RangedAttack + "0"}");
             }
             else
             {

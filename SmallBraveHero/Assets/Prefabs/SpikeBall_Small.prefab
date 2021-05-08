@@ -95,6 +95,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4429278191039514900}
   - component: {fileID: 4429278191039514901}
+  - component: {fileID: 1493638004090018195}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -167,6 +168,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1493638004090018195
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4429278191039514903}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.37
 --- !u!1 &4429278191316846866
 GameObject:
   m_ObjectHideFlags: 0

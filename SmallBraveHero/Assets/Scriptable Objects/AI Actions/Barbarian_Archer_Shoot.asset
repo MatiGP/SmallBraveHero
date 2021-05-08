@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa7d8f2509e7e7246b44fa1b31b066b7, type: 3}
-  m_Name: IsPlayerInRange
+  m_Script: {fileID: 11500000, guid: 8e7050eb928fa0c4981c944be3c02915, type: 3}
+  m_Name: Barbarian_Archer_Shoot
   m_EditorClassIdentifier: 
-  decisionValue: 0
+  isRanged: 1
+  projectileID: 0
+  hasMultipleAttacks: 0
+  attackCount: 0
