@@ -10,8 +10,7 @@ public class ProjectilePooler : MonoBehaviour
     [SerializeField] private Projectile[] projectiles;
     [SerializeField] private int eachProjectileSpawnCount = 5;
 
-    private List<Projectile> usedProjectiles = null;
-    private List<Projectile> unUsedProjectiles = null;
+    private Dictionary<int, Queue<Projectile>> projectilePool = null;
 
     void Awake()
     {
@@ -19,36 +18,42 @@ public class ProjectilePooler : MonoBehaviour
         {
             Instance = this;
         }
+
+        PreparePool();
     }
 
     private void PreparePool()
     {
-        usedProjectiles = new List<Projectile>();
-        unUsedProjectiles = new List<Projectile>();
+        projectilePool = new Dictionary<int, Queue<Projectile>>();
 
-        for(int i = 0; i < projectiles.Length; i++)
+        for (int i = 0; i < projectiles.Length; i++)
         {
-            for(int j = 0; j < eachProjectileSpawnCount; j++)
+            projectilePool[projectiles[i].ProjectileID] = new Queue<Projectile>();
+
+            for (int j = 0; j < eachProjectileSpawnCount; j++)
             {
-                unUsedProjectiles.Add(Instantiate(projectiles[i]));
+                Projectile projectile = Instantiate(projectiles[i]);
+                projectile.gameObject.SetActive(false);
+
+                projectilePool[projectiles[i].ProjectileID].Enqueue(projectile);
+                
             }
         }
     }
 
     public void SpawnProjectileFromPool(int id, float direction = 1, Vector3 position = new Vector3())
     {
-        Projectile projectile = unUsedProjectiles.FirstOrDefault(x => x.ProjectileID == id);
+        Projectile projectile = projectilePool[id].Dequeue();
 
         projectile.SetProjectileDirection(direction);
+        projectile.transform.position = position;
         projectile.gameObject.SetActive(true);
-
-        unUsedProjectiles.Remove(projectile);
-        usedProjectiles.Add(projectile);
     }
 
-    public void AddProjectileToUnUsed(Projectile projectile)
+    public void AddProjectileToPool(Projectile projectile)
     {
-        unUsedProjectiles.Add(projectile);
         projectile.gameObject.SetActive(false);
+
+        projectilePool[projectile.ProjectileID].Enqueue(projectile);
     }
 }

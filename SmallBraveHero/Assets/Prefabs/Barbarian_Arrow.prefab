@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ea24e4503ea6ec4187ae551242d5d82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 5777610709182496252}
   projectileID: 0
   projectileSpeed: 4
   projectileLifetime: 4

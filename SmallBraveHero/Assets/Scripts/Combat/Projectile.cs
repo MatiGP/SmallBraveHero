@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    [SerializeField] private SpriteRenderer spriteRenderer = null;
+
     [SerializeField] protected int projectileID;
     public int ProjectileID { get => projectileID; }
 
@@ -20,7 +22,7 @@ public class Projectile : MonoBehaviour
 
         if(currentLifetime > projectileLifetime)
         {
-            ProjectilePooler.Instance.AddProjectileToUnUsed(this);           
+            ProjectilePooler.Instance.AddProjectileToPool(this);           
         }
 
         transform.position += Vector3.right * direction * projectileSpeed * Time.deltaTime;
@@ -29,6 +31,9 @@ public class Projectile : MonoBehaviour
     public void SetProjectileDirection(float val)
     {
         direction = val;
+        spriteRenderer.flipX = direction != 1;
+        spriteRenderer.flipY = spriteRenderer.flipX;
+
     }
 
     private void OnEnable()

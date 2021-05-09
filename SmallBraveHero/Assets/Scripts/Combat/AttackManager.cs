@@ -61,7 +61,7 @@ public class AttackManager : MonoBehaviour
     
     public void SpawnProjectile(int projectileID)
     {
-        ProjectilePooler.Instance.SpawnProjectileFromPool(projectileID, direction);
+        ProjectilePooler.Instance.SpawnProjectileFromPool(projectileID, direction, transform.position);
     }
 
     //Gizmosy by zwizualizować collidery ataku.
