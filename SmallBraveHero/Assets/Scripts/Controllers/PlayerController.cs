@@ -21,6 +21,8 @@ public class PlayerController : CharacterController
 
     public StateMachine stateMachine { get; private set; }
 
+    public static float AngleBetweenPlayerAndCursor { get; private set; }
+
     protected override void Awake()
     {
         base.Awake();
@@ -54,6 +56,8 @@ public class PlayerController : CharacterController
         stateMachine.CurrentState.UpdateInput();
         stateMachine.CurrentState.UpdateLogic();
 
+        CalculateCursorAngle();
+
     }
 
     private void FixedUpdate()
@@ -63,6 +67,9 @@ public class PlayerController : CharacterController
         stateMachine.CurrentState.UpdatePhysics();
     }
 
-
-
+    private void CalculateCursorAngle()
+    {
+        Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        AngleBetweenPlayerAndCursor = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+    }
 }

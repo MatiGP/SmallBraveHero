@@ -15,6 +15,9 @@ namespace Code.Equipment.Items
         [SerializeField] private float weaponSpeed;
         public float WeaponSpeed { get => weaponSpeed; }
 
+        [SerializeField] private WeaponType weaponType;
+        public WeaponType WeaponType { get => weaponType; }
+    
         [SerializeField] private Vector2 weaponColliderSize;
         public Vector2 WeaponColliderSize { get => weaponColliderSize; }
 
@@ -25,5 +28,9 @@ namespace Code.Equipment.Items
         {
             Inventory.Instance.WeaponHolder.EquipWeapon(this);
         }
+
+        
     }
+
+    public enum WeaponType { Melee, Ranged }
 }

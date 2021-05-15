@@ -1,4 +1,5 @@
 ﻿using Code.Equipment.Items;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,15 +8,18 @@ namespace Code.Equipment
 {
     public class WeaponHolder : MonoBehaviour
     {
+        public event EventHandler OnAttack;
+
         [SerializeField] private SpriteRenderer weaponRenderer;
         [SerializeField] private Animator animator;
         [SerializeField] private Weapon currentWeapon;
-        [SerializeField] private BoxCollider2D weaponCollider;
+        public Weapon CurrentWeapon { get => currentWeapon; }
+        [SerializeField] private BoxCollider2D weaponCollider;   
 
         public bool HasWeapon { get => currentWeapon != null; }
 
         float attackDelay;
-        int damage;
+        int damage;           
 
         private void Update()
         {
@@ -25,11 +29,19 @@ namespace Code.Equipment
                 return;
             }
 
+            if (!HasWeapon)
+            {
+                return;
+            }
+          
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 Attack();
+                OnAttack.Invoke(this, EventArgs.Empty);
+                
             }
-        }
+
+        }      
 
         public void EquipWeapon(Weapon weapon)
         {
@@ -46,12 +58,8 @@ namespace Code.Equipment
         }
 
         public void Attack()
-        {
-            if (!HasWeapon)
-            {
-                return;
-            }
-            damage = Random.Range(currentWeapon.WeaponMinDamage, currentWeapon.WeaponMaxDamage + 1);
+        {           
+            damage = UnityEngine.Random.Range(currentWeapon.WeaponMinDamage, currentWeapon.WeaponMaxDamage + 1);
             attackDelay = currentWeapon.WeaponSpeed;
             animator.Play("Swing");
         }

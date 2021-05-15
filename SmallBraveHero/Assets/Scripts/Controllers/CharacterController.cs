@@ -55,6 +55,9 @@ public abstract class CharacterController : MonoBehaviour
     public string CharacterAnimPrefix { get => characterAnimPrefix; }
     protected string characterAnimPrefix;
 
+    public bool IsCharacterPerformingAction { get => isCharacterPerformingAction; }
+    protected bool isCharacterPerformingAction = false;
+
     [Header("Detectors")]
     [SerializeField] Transform groundDetector;
     [SerializeField] Vector2 groundDetectorSize;
@@ -114,6 +117,11 @@ public abstract class CharacterController : MonoBehaviour
 
     public void FlipSprite()
     {
+        if (isCharacterPerformingAction)
+        {
+            return;
+        }
+
         if(direction == 1)
         {
             spriteRenderer.flipX = false;
@@ -122,6 +130,16 @@ public abstract class CharacterController : MonoBehaviour
         {
             spriteRenderer.flipX = true;
         }
+    }
+
+    public void LockCharacter()
+    {
+        isCharacterPerformingAction = true;
+    }
+
+    public void UnLockCharacter()
+    {
+        isCharacterPerformingAction = false;
     }
 
     protected virtual void OnDrawGizmos()
