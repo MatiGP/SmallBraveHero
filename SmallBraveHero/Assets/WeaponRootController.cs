@@ -7,9 +7,8 @@ using UnityEngine;
 public class WeaponRootController : MonoBehaviour
 {
     [Header("Weapon Flip Settings")]
-    [SerializeField] float weaponMaxAngle = 80f;
-    [SerializeField] float weaponMinAngle = -80f;
-    [SerializeField] WeaponHolder weaponHolder;
+    [SerializeField] private WeaponHolder weaponHolder;
+    [SerializeField] private PlayerController playerController;
 
     private void Awake()
     {
@@ -23,11 +22,9 @@ public class WeaponRootController : MonoBehaviour
             return;
         }
 
-        float angle = PlayerController.AngleBetweenPlayerAndCursor;
-
         if (weaponHolder.CurrentWeapon.WeaponType == WeaponType.Melee)
         {
-            if (angle < weaponMaxAngle && angle > weaponMinAngle)
+            if (playerController.IsFacingRight)
             {
                 transform.localScale = new Vector3(1, 1, 1);
             }

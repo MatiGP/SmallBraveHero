@@ -11,8 +11,8 @@ public class FallState : BaseState
     public override void Enter()
     {
         movementVector = Vector3.zero;
-        controller.CharacterAnimator.Play(controller.CharacterAnimPrefix + EStateType.Fall);
-        
+        controller.PlayerModel.PlayAnimation(controller.CharacterAnimPrefix + EStateType.Fall);
+        controller.PlayerModel.PlayArmsAnimation(controller.CharacterAnimPrefix + EStateType.Fall);
     }
 
     public override void Exit()

@@ -11,7 +11,8 @@ public class RunState : BaseState
     public override void Enter()
     {
         movementVector = Vector3.zero;
-        controller.CharacterAnimator.Play(controller.CharacterAnimPrefix + EStateType.Run);
+        controller.PlayerModel.PlayAnimation(controller.CharacterAnimPrefix + EStateType.Run);
+        controller.PlayerModel.PlayArmsAnimation(controller.CharacterAnimPrefix + EStateType.Run);
     }
 
     public override void Exit()

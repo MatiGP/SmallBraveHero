@@ -12,7 +12,8 @@ public class JumpState : BaseState
     {
         movementVector.y = controller.JumpHeight;
         movementVector.x = 0;
-        controller.CharacterAnimator.Play(controller.CharacterAnimPrefix + EStateType.Jump);
+        controller.PlayerModel.PlayAnimation(controller.CharacterAnimPrefix + EStateType.Jump);
+        controller.PlayerModel.PlayArmsAnimation(controller.CharacterAnimPrefix + EStateType.Jump);
     }
 
     public override void Exit()

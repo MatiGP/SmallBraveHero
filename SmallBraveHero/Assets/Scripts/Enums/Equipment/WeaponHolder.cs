@@ -14,33 +14,44 @@ namespace Code.Equipment
         [SerializeField] private Animator animator;
         [SerializeField] private Weapon currentWeapon;
         public Weapon CurrentWeapon { get => currentWeapon; }
-        [SerializeField] private BoxCollider2D weaponCollider;   
+        [SerializeField] private BoxCollider2D weaponCollider;
+        [SerializeField] private PlayerController playerController;
 
         public bool HasWeapon { get => currentWeapon != null; }
 
         float attackDelay;
-        int damage;           
+        int damage;
+
+        private void Awake()
+        {
+            playerController.PlayerControls.Gameplay.Attack.performed += ctx => PerformAttack();
+            playerController.PlayerControls.Gameplay.Attack.Enable();
+        }
+
+        private void OnDisable()
+        {
+            playerController.PlayerControls.Gameplay.Attack.performed -= ctx => PerformAttack();
+            playerController.PlayerControls.Gameplay.Attack.Disable();
+        }
+
+        private void PerformAttack()
+        {
+            Debug.Log("hP");
+            if (!HasWeapon)
+            {
+                return;
+            }
+            
+            Attack();
+            OnAttack.Invoke(this, EventArgs.Empty);
+        }
 
         private void Update()
         {
             if(attackDelay > 0)
             {
                 attackDelay -= Time.deltaTime;
-                return;
             }
-
-            if (!HasWeapon)
-            {
-                return;
-            }
-          
-            if (Input.GetKeyDown(KeyCode.Mouse0))
-            {
-                Attack();
-                OnAttack.Invoke(this, EventArgs.Empty);
-                
-            }
-
         }      
 
         public void EquipWeapon(Weapon weapon)
@@ -49,6 +60,7 @@ namespace Code.Equipment
             weaponRenderer.sprite = weapon.ItemSprite;
             weaponCollider.size = currentWeapon.WeaponColliderSize;
             weaponCollider.offset = weaponRenderer.transform.position + currentWeapon.WeaponColliderOffset;
+            animator.SetFloat(0, currentWeapon.WeaponSpeed);
             animator.Play("Idle");
         }
 
@@ -61,7 +73,8 @@ namespace Code.Equipment
         {           
             damage = UnityEngine.Random.Range(currentWeapon.WeaponMinDamage, currentWeapon.WeaponMaxDamage + 1);
             attackDelay = currentWeapon.WeaponSpeed;
-            animator.Play("Swing");
+            animator.Play(""+currentWeapon.WeaponType);
+            playerController.PlayerModel.PlayArmsAnimation(playerController.CharacterAnimPrefix+"SwingWeapon_"+currentWeapon.WeaponType);
         }
 
         public void EnableWeaponCollider()

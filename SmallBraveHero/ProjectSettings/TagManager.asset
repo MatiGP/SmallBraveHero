@@ -54,8 +54,11 @@ TagManager:
   - name: Furnishing
     uniqueID: 2354745789
     locked: 0
-  - name: Characters
+  - name: Enemies
     uniqueID: 245677969
+    locked: 0
+  - name: Player
+    uniqueID: 1883002631
     locked: 0
   - name: Items
     uniqueID: 3079110885

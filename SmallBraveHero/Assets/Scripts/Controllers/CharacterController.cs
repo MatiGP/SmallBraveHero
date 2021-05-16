@@ -16,8 +16,7 @@ public abstract class CharacterController : MonoBehaviour
     [SerializeField] private Health characterHealth = null;
     public Health CharacterHealth { get => characterHealth; }
     
-    public Animator CharacterAnimator { get => characterAnimator; }
-    [SerializeField] Animator characterAnimator = null;
+    
 
     public float MoveSpeed { get => moveSpeed; }
     [Header("Movement Settings")]
@@ -115,7 +114,7 @@ public abstract class CharacterController : MonoBehaviour
         direction *= -1;      
     }
 
-    public void FlipSprite()
+    public virtual void FlipSprite()
     {
         if (isCharacterPerformingAction)
         {

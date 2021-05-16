@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : CharacterController
-{   
+{
+    [SerializeField] private PlayerModelController modelController;
+    public PlayerModelController PlayerModel { get => modelController; }
+
     public float WallJumpHeight { get => wallJumpHeight; }
     [Header("WallJumps")]
     [SerializeField] float wallJumpHeight;
@@ -21,16 +25,92 @@ public class PlayerController : CharacterController
 
     public StateMachine stateMachine { get; private set; }
 
-    public static float AngleBetweenPlayerAndCursor { get; private set; }
+    private PlayerControls controls;
+    public PlayerControls PlayerControls { get => controls; }
+   
+    private void OnDisable()
+    {
+        UnBindControls();
+    }
 
     protected override void Awake()
     {
         base.Awake();
         stateMachine = new StateMachine();
         characterAnimPrefix = "Player_";
+        controls = new PlayerControls();
+        BindControls();
     }
 
     private void Start()
+    {
+        InitializePlayerStateMachine();
+        CalculateGravity();
+    }
+
+    void BindControls()
+    {
+        controls.Gameplay.MoveLeftRight.performed += MoveLeftRight_performed;
+        controls.Gameplay.MoveLeftRight.canceled += MoveLeftRight_canceled;
+        controls.Gameplay.MoveLeftRight.Enable();
+
+        controls.Gameplay.Jump.performed += Jump_performed;
+        controls.Gameplay.Jump.canceled += Jump_canceled;
+        controls.Gameplay.Jump.Enable();
+
+        controls.Gameplay.ActiveDodge.performed += ActiveDodge_performed;
+        controls.Gameplay.ActiveDodge.canceled += ActiveDodge_canceled;
+        controls.Gameplay.ActiveDodge.Enable();
+
+        
+    }
+    
+    void UnBindControls()
+    {
+        controls.Gameplay.MoveLeftRight.performed -= MoveLeftRight_performed;
+        controls.Gameplay.MoveLeftRight.canceled -= MoveLeftRight_canceled;
+        controls.Gameplay.MoveLeftRight.Disable();
+
+        controls.Gameplay.Jump.performed -= Jump_performed;
+        controls.Gameplay.Jump.canceled -= Jump_canceled;
+        controls.Gameplay.Jump.Enable();
+
+        controls.Gameplay.ActiveDodge.performed -= ActiveDodge_performed;
+        controls.Gameplay.ActiveDodge.canceled -= ActiveDodge_canceled;
+        controls.Gameplay.ActiveDodge.Enable();
+    }
+
+    private void Jump_performed(InputAction.CallbackContext context)
+    {
+        isJumping = context.ReadValue<float>() > 0.9f;
+    }
+
+    private void MoveLeftRight_performed(InputAction.CallbackContext context)
+    {
+        direction = context.ReadValue<float>();
+    }
+
+    private void MoveLeftRight_canceled(InputAction.CallbackContext obj)
+    {
+        direction = 0f;
+    }
+
+    private void ActiveDodge_canceled(InputAction.CallbackContext obj)
+    {
+        IsDodging = false;
+    }
+
+    private void Jump_canceled(InputAction.CallbackContext obj)
+    {
+        isJumping = false;
+    }
+
+    private void ActiveDodge_performed(InputAction.CallbackContext context)
+    {
+        IsDodging = context.ReadValue<float>() > 0.9f;
+    }
+
+    private void InitializePlayerStateMachine()
     {
         stateMachine.Initialize();
 
@@ -41,23 +121,18 @@ public class PlayerController : CharacterController
         stateMachine.AddState(EStateType.ActiveDodge, new ActiveDodge(this, stateMachine));
 
         stateMachine.Start();
-
-        CalculateGravity();
     }
 
     private void Update()
     {
-        direction = Input.GetAxisRaw("Horizontal");
-        
-        isJumping = Input.GetAxis("Jump") > 0;
-
-        IsDodging = Input.GetKeyDown(KeyCode.LeftShift);
-
         stateMachine.CurrentState.UpdateInput();
         stateMachine.CurrentState.UpdateLogic();
+    }
 
-        CalculateCursorAngle();
-
+  
+    public override void FlipSprite()
+    {
+        modelController.FlipBodyRenderer(direction);       
     }
 
     private void FixedUpdate()
@@ -65,11 +140,5 @@ public class PlayerController : CharacterController
         CheckForCollisions();
 
         stateMachine.CurrentState.UpdatePhysics();
-    }
-
-    private void CalculateCursorAngle()
-    {
-        Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        AngleBetweenPlayerAndCursor = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-    }
+    }   
 }

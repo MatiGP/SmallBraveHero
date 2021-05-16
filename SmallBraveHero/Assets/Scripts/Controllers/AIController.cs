@@ -8,6 +8,8 @@ namespace Code.StateMachine.AI
 {
     public class AIController : CharacterController
     {
+        [SerializeField] private SpriteRenderer spriteRenderer = null;
+        public bool IsFacingRight { get => !spriteRenderer.flipX; }
         [Header("Enemy Settings")]
         [SerializeField] private float tauntRange = 1;
         public float TauntRange { get => tauntRange; }      
@@ -18,6 +20,9 @@ namespace Code.StateMachine.AI
         public float AttackRange { get => attackRange; }
         [SerializeField] private float attackRange = 0.5f;
         [SerializeField] private Vector3 platformCheckOffset = new Vector3();
+
+        public Animator CharacterAnimator { get => characterAnimator; }
+        [SerializeField] Animator characterAnimator = null;
 
         public PlayerController Target { get; private set; }
 

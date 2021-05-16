@@ -11,7 +11,8 @@ public class IdleState : BaseState
     public override void Enter()
     {
         movementVector = Vector2.zero;
-        controller.CharacterAnimator.Play(controller.CharacterAnimPrefix + EStateType.Idle);
+        controller.PlayerModel.PlayAnimation(controller.CharacterAnimPrefix + EStateType.Idle);
+        controller.PlayerModel.PlayArmsAnimation(controller.CharacterAnimPrefix + EStateType.Idle);
     }
 
     public override void Exit()
