@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Zombie_Attack
   m_EditorClassIdentifier: 
   isRanged: 0
+  projectileID: 0
   hasMultipleAttacks: 0
   attackCount: 0

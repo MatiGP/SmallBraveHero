@@ -1,0 +1,117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LevelAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: c4e172daa59c38442b083a8f7df40114, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: -8603967170219370085, guid: 0b0c7f02901942044aa0a8f3162e97b8, type: 3}
+  - {fileID: 4769673483244287686, guid: 0b0c7f02901942044aa0a8f3162e97b8, type: 3}
+  - {fileID: 558670957913971275, guid: 0b0c7f02901942044aa0a8f3162e97b8, type: 3}
+  - {fileID: -7395203315099921048, guid: 0b0c7f02901942044aa0a8f3162e97b8, type: 3}
+  - {fileID: 7212898943603112842, guid: 0b0c7f02901942044aa0a8f3162e97b8, type: 3}
+  - {fileID: 5455100557206760015, guid: 0b0c7f02901942044aa0a8f3162e97b8, type: 3}
+  - {fileID: -275802643983417606, guid: 0b0c7f02901942044aa0a8f3162e97b8, type: 3}
+  - {fileID: -3164045492764836989, guid: 0b0c7f02901942044aa0a8f3162e97b8, type: 3}
+  - {fileID: -898442241759939511, guid: 0b0c7f02901942044aa0a8f3162e97b8, type: 3}
+  - {fileID: 34568405140544131, guid: 0b0c7f02901942044aa0a8f3162e97b8, type: 3}
+  - {fileID: 21300000, guid: bd1f5613675dc8d4fa23514cfd7f93dc, type: 3}
+  - {fileID: -223520912772822353, guid: 9da81ce5404dd5745adc0b6181eaf853, type: 3}
+  - {fileID: -8020987090183089722, guid: 9da81ce5404dd5745adc0b6181eaf853, type: 3}
+  - {fileID: -6685341999571096421, guid: 9da81ce5404dd5745adc0b6181eaf853, type: 3}
+  - {fileID: -5537947268192083680, guid: 9da81ce5404dd5745adc0b6181eaf853, type: 3}
+  - {fileID: -7615679316434976352, guid: 9da81ce5404dd5745adc0b6181eaf853, type: 3}
+  - {fileID: -2035947629966943424, guid: 9da81ce5404dd5745adc0b6181eaf853, type: 3}
+  - {fileID: -6399889546716948818, guid: 9da81ce5404dd5745adc0b6181eaf853, type: 3}
+  - {fileID: 3117280735141040818, guid: 9da81ce5404dd5745adc0b6181eaf853, type: 3}
+  - {fileID: -7529043298141139263, guid: 9da81ce5404dd5745adc0b6181eaf853, type: 3}
+  - {fileID: 4399466821203534578, guid: 9da81ce5404dd5745adc0b6181eaf853, type: 3}
+  - {fileID: -8282044406837588429, guid: 9da81ce5404dd5745adc0b6181eaf853, type: 3}
+  - {fileID: -5854890746021700338, guid: 9da81ce5404dd5745adc0b6181eaf853, type: 3}
+  - {fileID: 6958292526324027761, guid: e5658c96dc4a00e408d6edf8342186d1, type: 3}
+  - {fileID: -4597275897413558968, guid: e5658c96dc4a00e408d6edf8342186d1, type: 3}
+  - {fileID: -4548066396824705333, guid: e5658c96dc4a00e408d6edf8342186d1, type: 3}
+  - {fileID: 8528526221730888584, guid: e5658c96dc4a00e408d6edf8342186d1, type: 3}
+  - {fileID: 8847452972208251017, guid: e5658c96dc4a00e408d6edf8342186d1, type: 3}
+  - {fileID: 6316949975808742170, guid: e5658c96dc4a00e408d6edf8342186d1, type: 3}
+  - {fileID: 8928508882668923317, guid: e5658c96dc4a00e408d6edf8342186d1, type: 3}
+  - {fileID: 2974088249187476565, guid: e5658c96dc4a00e408d6edf8342186d1, type: 3}
+  - {fileID: 21300000, guid: 7b74b5ea48228814cbb8240e0faaaaab, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - environtment_part1_2
+  - environtment_part1_3
+  - environtment_part1_0
+  - environtment_part1_1
+  - environtment_part1_6
+  - environtment_part1_7
+  - environtment_part1_4
+  - environtment_part1_5
+  - environtment_part1_8
+  - environtment_part1_9
+  - WallDungeonTile
+  - Tiles_Environment_9
+  - Tiles_Environment_8
+  - Tiles_Environment_1
+  - Tiles_Environment_0
+  - Tiles_Environment_3
+  - Tiles_Environment_2
+  - Tiles_Environment_5
+  - Tiles_Environment_4
+  - Tiles_Environment_7
+  - Tiles_Environment_6
+  - Tiles_Environment_10
+  - Tiles_Environment_11
+  - _iles_4
+  - _iles_5
+  - _iles_6
+  - _iles_7
+  - _iles_0
+  - _iles_1
+  - _iles_2
+  - _iles_3
+  - BarbarianArcher_Arrow
+  m_Tag: LevelAtlas
+  m_IsVariant: 0

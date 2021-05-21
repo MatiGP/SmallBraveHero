@@ -27,7 +27,9 @@ public class PlayerController : CharacterController
 
     private PlayerControls controls;
     public PlayerControls PlayerControls { get => controls; }
-   
+
+    public override bool IsFacingRight { get => PlayerModel.Direction == 1; }
+
     private void OnDisable()
     {
         UnBindControls();

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Barbarian_Attack
   m_EditorClassIdentifier: 
   isRanged: 0
-  hasMultipleAttacks: 0
-  attackCount: 0
+  projectileID: 0
+  hasMultipleAttacks: 1
+  attackCount: 2

@@ -9,8 +9,6 @@ namespace Code.StateMachine.AI.Actions
     {
         public override void Act(AIController controller)
         {
-            controller.AttackManager.UnlockCharacter();
-
             controller.CharacterAnimator.Play(controller.CharacterAnimPrefix + EAction.Run);
 
             int direction = GetPlayerDirection(controller);

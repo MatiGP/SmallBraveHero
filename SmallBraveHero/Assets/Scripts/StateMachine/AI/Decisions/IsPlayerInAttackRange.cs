@@ -16,7 +16,9 @@ namespace Code.StateMachine.AI.Decisions
 
         bool IsInAttackRange(AIController controller)
         {
-            return Vector2.Distance(controller.transform.position, controller.Target.transform.position) <= controller.AttackRange;           
+            float distance = Vector2.Distance(controller.transform.position, controller.Target.transform.position);
+
+            return distance <= controller.AttackRange;           
         }
     }
 }

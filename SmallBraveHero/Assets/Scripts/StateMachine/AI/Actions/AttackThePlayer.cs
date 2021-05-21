@@ -19,19 +19,17 @@ namespace Code.StateMachine.AI.Actions
 
         public override void Act(AIController controller)
         {
-            Debug.Log($"Attacking :{controller.Target.name}");
-
-            controller.AttackManager.SetDirection(controller.Direction);
-
-            Debug.Log($"Setting attack direction {controller.Direction} ");
-
-            if (controller.AttackManager.IsAttackCompleted)
+            if (!controller.AttackManager.IsAttackCompleted)
             {
                 Debug.Log("Other Attacking Action is in progress");
                 return;
             }
 
-            Debug.Log(isRanged);
+            Debug.Log($"Attacking :{controller.Target.name}");
+
+            controller.AttackManager.SetDirection(controller.Direction);
+
+            Debug.Log($"Setting attack direction {controller.Direction} ");         
 
             if (isRanged)
             {

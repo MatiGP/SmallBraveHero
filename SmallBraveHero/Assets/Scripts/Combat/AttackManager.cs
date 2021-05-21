@@ -10,7 +10,7 @@ public class AttackManager : MonoBehaviour
 
     private float direction = 1;
 
-    private bool isAttackCompleted;
+    private bool isAttackCompleted = true;
     public bool IsAttackCompleted { get => isAttackCompleted; }
 
     //Attack Index => Jaki AttackCollider ma być użyty.
@@ -44,14 +44,18 @@ public class AttackManager : MonoBehaviour
         controller.CharacterAnimator.Play(attackName);
     }
 
-    public void LockCharacter()
+    public void CompleteAttack()
     {
+        Debug.Log("Completing an attack");
         isAttackCompleted = true;
+        controller.UnLockCharacter();
     }
 
-    public void UnlockCharacter()
+    public void StartAttack()
     {
+        Debug.Log("Starting an attack");
         isAttackCompleted = false;
+        controller.LockCharacter();
     }
 
     public void SetDirection(float _direction)

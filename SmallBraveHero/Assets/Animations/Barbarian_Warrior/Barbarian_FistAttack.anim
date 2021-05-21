@@ -73,7 +73,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: LockCharacter
+    functionName: StartAttack
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -87,7 +87,7 @@ AnimationClip:
     intParameter: 1
     messageOptions: 0
   - time: 0.33333334
-    functionName: UnlockCharacter
+    functionName: CompleteAttack
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

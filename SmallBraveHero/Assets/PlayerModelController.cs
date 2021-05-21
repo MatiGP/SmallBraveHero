@@ -14,6 +14,8 @@ public class PlayerModelController : MonoBehaviour
     [SerializeField] private Animator legsAnimator;
     [SerializeField] private Animator armsAnimator;
 
+    public float Direction { get => headRenderer.flipX ? -1 : 1; }
+
     public void PlayAnimation(string animName)
     {
         bodyAnimator.Play(animName);
@@ -22,7 +24,7 @@ public class PlayerModelController : MonoBehaviour
     }
 
     public void FlipBodyRenderer(float direction)
-    {
+    {      
         if (direction == 1)
         {
             bodyRenderer.flipX = false;

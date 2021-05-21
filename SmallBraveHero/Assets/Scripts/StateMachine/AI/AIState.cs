@@ -13,6 +13,11 @@ namespace Code.StateMachine.AI.States
 
         public void UpdateState(AIController controller)
         {
+            if (controller.IsCharacterPerformingAction)
+            {
+                return;
+            }
+
             DoActions(controller);
 
             CheckTransitions(controller);
@@ -20,13 +25,11 @@ namespace Code.StateMachine.AI.States
 
         private void DoActions(AIController controller)
         {
-            
-            action.Act(controller);
-            
+            action.Act(controller);          
         }
 
         private void CheckTransitions(AIController controller)
-        {
+        {       
             for (int i = 0; i < transitions.Length; i++)
             {
                 bool decisionSucceeded = transitions[i].Decision.Decide(controller);

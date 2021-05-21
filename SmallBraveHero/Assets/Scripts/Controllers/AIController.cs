@@ -9,7 +9,7 @@ namespace Code.StateMachine.AI
     public class AIController : CharacterController
     {
         [SerializeField] private SpriteRenderer spriteRenderer = null;
-        public bool IsFacingRight { get => !spriteRenderer.flipX; }
+
         [Header("Enemy Settings")]
         [SerializeField] private float tauntRange = 1;
         public float TauntRange { get => tauntRange; }      
@@ -35,6 +35,9 @@ namespace Code.StateMachine.AI
 
         private bool reachedEndOfPlatform = false;
         public bool ReachedEndOfPlatform { get => reachedEndOfPlatform; }
+
+        public bool IsCharacterPerformingAction { get => isCharacterPerformingAction; }
+        protected bool isCharacterPerformingAction = false;
 
         private Vector3 checkPosition = new Vector3();
 
@@ -88,6 +91,30 @@ namespace Code.StateMachine.AI
         public void SetDirection(float value)
         {
             direction = value;
+        }
+
+        public void LockCharacter()
+        {
+            isCharacterPerformingAction = true;
+            Debug.Log("Locking Character");
+        }
+
+        public void UnLockCharacter()
+        {
+            isCharacterPerformingAction = false;
+            Debug.Log("Unlocking Character");
+        }
+
+        public override void FlipSprite()
+        {
+            if(direction == 1)
+            {
+                spriteRenderer.flipX = false;
+            }
+            else if(direction == -1)
+            {
+                spriteRenderer.flipX = true;
+            }
         }
 
         protected override void OnDrawGizmos()

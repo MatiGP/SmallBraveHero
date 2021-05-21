@@ -8,15 +8,13 @@ public abstract class CharacterController : MonoBehaviour
     [SerializeField] protected LayerMask groundLayer;
     [SerializeField] protected LayerMask wallLayer;
     public bool Gizmo;
+ 
+    public virtual bool IsFacingRight { get; }
 
     [Header("General References")]
-    [SerializeField] private SpriteRenderer spriteRenderer = null;
-    public bool IsFacingRight { get => spriteRenderer.flipX; }
     [SerializeField] private BoxCollider2D characterCollider = null;
     [SerializeField] private Health characterHealth = null;
     public Health CharacterHealth { get => characterHealth; }
-    
-    
 
     public float MoveSpeed { get => moveSpeed; }
     [Header("Movement Settings")]
@@ -53,9 +51,6 @@ public abstract class CharacterController : MonoBehaviour
 
     public string CharacterAnimPrefix { get => characterAnimPrefix; }
     protected string characterAnimPrefix;
-
-    public bool IsCharacterPerformingAction { get => isCharacterPerformingAction; }
-    protected bool isCharacterPerformingAction = false;
 
     [Header("Detectors")]
     [SerializeField] Transform groundDetector;
@@ -114,32 +109,7 @@ public abstract class CharacterController : MonoBehaviour
         direction *= -1;      
     }
 
-    public virtual void FlipSprite()
-    {
-        if (isCharacterPerformingAction)
-        {
-            return;
-        }
-
-        if(direction == 1)
-        {
-            spriteRenderer.flipX = false;
-        }
-        else if(direction == -1)
-        {
-            spriteRenderer.flipX = true;
-        }
-    }
-
-    public void LockCharacter()
-    {
-        isCharacterPerformingAction = true;
-    }
-
-    public void UnLockCharacter()
-    {
-        isCharacterPerformingAction = false;
-    }
+    public abstract void FlipSprite();
 
     protected virtual void OnDrawGizmos()
     {

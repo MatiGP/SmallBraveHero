@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UIAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 1e820e1820c750b47befcf23774c4c8f, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: cd8375a4b01979149a3c472b50f2b9e3, type: 3}
+  - {fileID: 21300000, guid: 0ddb3f299d9aaa545897489a301af571, type: 3}
+  - {fileID: -8683326458019749563, guid: 09cb53b983b4f11499aa59392fd02610, type: 3}
+  - {fileID: -221398988683580353, guid: 09cb53b983b4f11499aa59392fd02610, type: 3}
+  - {fileID: 5574794059371588543, guid: 09cb53b983b4f11499aa59392fd02610, type: 3}
+  - {fileID: -1114969136313593530, guid: 09cb53b983b4f11499aa59392fd02610, type: 3}
+  - {fileID: 7478207362180696178, guid: 09cb53b983b4f11499aa59392fd02610, type: 3}
+  - {fileID: -4126777901902800630, guid: 09cb53b983b4f11499aa59392fd02610, type: 3}
+  - {fileID: -8905579997424479269, guid: 09cb53b983b4f11499aa59392fd02610, type: 3}
+  - {fileID: 8493818001330542747, guid: 09cb53b983b4f11499aa59392fd02610, type: 3}
+  - {fileID: 3635216482373580575, guid: 09cb53b983b4f11499aa59392fd02610, type: 3}
+  - {fileID: 7980384683563448787, guid: 09cb53b983b4f11499aa59392fd02610, type: 3}
+  - {fileID: 5426545077535221460, guid: 09cb53b983b4f11499aa59392fd02610, type: 3}
+  - {fileID: -4363864608571677627, guid: 09cb53b983b4f11499aa59392fd02610, type: 3}
+  - {fileID: 1620591641210142324, guid: 09cb53b983b4f11499aa59392fd02610, type: 3}
+  - {fileID: 7656311199515090035, guid: 09cb53b983b4f11499aa59392fd02610, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - UI_EquipTips
+  - 16x16 BagpackIcon
+  - _I_Elements_0
+  - _I_Elements_1
+  - _I_Elements_2
+  - _I_Elements_3
+  - _I_Elements_4
+  - _I_Elements_5
+  - _I_Elements_6
+  - _I_Elements_7
+  - _I_Elements_8
+  - _I_Elements_9
+  - _I_Elements_13
+  - _I_Elements_12
+  - _I_Elements_11
+  - _I_Elements_10
+  m_Tag: UIAtlas
+  m_IsVariant: 0
