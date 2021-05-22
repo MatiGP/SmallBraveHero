@@ -752,7 +752,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   Gizmo: 1
-  spriteRenderer: {fileID: 212291153}
   characterCollider: {fileID: 212291157}
   characterHealth: {fileID: 212291151}
   moveSpeed: 1
@@ -766,6 +765,7 @@ MonoBehaviour:
   wallDetectorRight: {fileID: 1571577097}
   wallDetectorLeft: {fileID: 1613126434}
   wallDetectorSize: {x: 0.09, y: 1}
+  spriteRenderer: {fileID: 212291153}
   tauntRange: 4
   tauntDuration: 2
   patrolMoveSpeed: 1
@@ -1419,7 +1419,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   Gizmo: 1
-  spriteRenderer: {fileID: 0}
   characterCollider: {fileID: 908080343}
   characterHealth: {fileID: 908080346}
   moveSpeed: 3
@@ -2340,7 +2339,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1559014617}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.05, y: 0.58, z: 0}
+  m_LocalPosition: {x: -16.37, y: 10.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 996074874}
@@ -2449,7 +2448,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   Gizmo: 1
-  spriteRenderer: {fileID: 1559014618}
   characterCollider: {fileID: 1559014622}
   characterHealth: {fileID: 1559014621}
   moveSpeed: 1
@@ -2463,6 +2461,7 @@ MonoBehaviour:
   wallDetectorRight: {fileID: 23020672}
   wallDetectorLeft: {fileID: 1791335273}
   wallDetectorSize: {x: 0.09, y: 1}
+  spriteRenderer: {fileID: 1559014618}
   tauntRange: 6
   tauntDuration: 2
   patrolMoveSpeed: 1
@@ -9967,7 +9966,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   Gizmo: 1
-  spriteRenderer: {fileID: 2124411934}
   characterCollider: {fileID: 2124411931}
   characterHealth: {fileID: 2124411936}
   moveSpeed: 1
@@ -9981,6 +9979,7 @@ MonoBehaviour:
   wallDetectorRight: {fileID: 1273163498}
   wallDetectorLeft: {fileID: 760141047}
   wallDetectorSize: {x: 0.12, y: 0.85}
+  spriteRenderer: {fileID: 2124411934}
   tauntRange: 9
   tauntDuration: 1
   patrolMoveSpeed: 0.5

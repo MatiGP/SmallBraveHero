@@ -9,5 +9,5 @@ namespace Code.StateMachine.AI.Actions
         public abstract void Act(AIController controller);
     }
 
-    enum EAction { Idle, Run, Death, MeleeAttack, RangedAttack }
+    enum EAction { Idle, Run, Death, MeleeAttack, RangedAttack, Dash }
 }
