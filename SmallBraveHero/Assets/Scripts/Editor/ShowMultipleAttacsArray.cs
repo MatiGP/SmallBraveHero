@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using Code.StateMachine.AI.Actions;
 
-[CustomEditor(typeof(AttackThePlayer))]
+[CustomEditor(typeof(AttackInMelee))]
 public class ShowMultipleAttacsArray : Editor
 {
     Rect size = new Rect(0, 0, 100, 400);
@@ -13,34 +13,17 @@ public class ShowMultipleAttacsArray : Editor
     {
         base.OnInspectorGUI();
 
+        AttackInMelee attackThePlayer = target as AttackInMelee;
+
         EditorGUILayout.BeginVertical();
 
-        AttackThePlayer attackThePlayer = target as AttackThePlayer;
+        attackThePlayer.hasMultipleAttacks = EditorGUILayout.ToggleLeft("Has Multiple Attacks ", attackThePlayer.hasMultipleAttacks);
 
-        attackThePlayer.isRanged = GUILayout.Toggle(attackThePlayer.isRanged, "Is Ranged");
-        
-        EditorGUILayout.BeginHorizontal();
-        if (attackThePlayer.isRanged)
-        {
-            attackThePlayer.projectileID = EditorGUILayout.IntField("Projectile ID: ", attackThePlayer.projectileID);
-        }
-        EditorGUILayout.EndHorizontal();
-        attackThePlayer.hasMultipleAttacks = GUILayout.Toggle(attackThePlayer.hasMultipleAttacks, "Has Multiple Attacks");
-
-        EditorGUILayout.BeginHorizontal();
         if (attackThePlayer.hasMultipleAttacks)
-        {            
-            attackThePlayer.attackCount = EditorGUILayout.IntField("Attack Count: ", attackThePlayer.attackCount);           
-        }
-        else
         {
-            attackThePlayer.attackCount = 0;
+            attackThePlayer.attackCount = EditorGUILayout.IntField("Number of attacks :", attackThePlayer.attackCount);
         }
 
-        
-        EditorGUILayout.EndHorizontal();
         EditorGUILayout.EndVertical();
-
-        EditorUtility.SetDirty(target);
     }
 }
