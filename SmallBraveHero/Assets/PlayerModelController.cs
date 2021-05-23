@@ -16,11 +16,15 @@ public class PlayerModelController : MonoBehaviour
 
     public float Direction { get => headRenderer.flipX ? -1 : 1; }
 
+    private string currentAnimationState = "";
+
     public void PlayAnimation(string animName)
     {
         bodyAnimator.Play(animName);
         headAnimator.Play(animName);       
         legsAnimator.Play(animName);
+
+        currentAnimationState = animName;
     }
 
     public void FlipBodyRenderer(float direction)
@@ -44,6 +48,11 @@ public class PlayerModelController : MonoBehaviour
     public void PlayArmsAnimation(string animName)
     {
         armsAnimator.Play(animName);
+    }
+
+    public void PlayDefaultArmsAnim()
+    {
+        armsAnimator.Play(currentAnimationState);
     }
 
 

@@ -1,9 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    public static event Action<int, Vector3> OnDamageTaken;
+    public static event Action<Health, Vector3> OnHealUp;
+    
     [SerializeField] int maxHealth;
     public int MaxHealth { get { return maxHealth; } }
 
@@ -15,6 +19,8 @@ public class Health : MonoBehaviour
 
     [SerializeField] private float damageInvulnerabilityDuration = 0.3f;
     private float currentDamageInvulnerabilityDuration;
+
+    public string PreviousDamageTaken { get; private set; }
 
     protected virtual void Awake()
     {
@@ -29,7 +35,7 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damageAmount)
+    public virtual void TakeDamage(int damageAmount)
     {
         if(currentDamageInvulnerabilityDuration > 0)
         {
@@ -37,10 +43,17 @@ public class Health : MonoBehaviour
         }
 
         Debug.Log($"Taking damage: -{damageAmount}");
-        currentHealth -= Mathf.Clamp(damageAmount - defence, 0, int.MaxValue);
+
+        int damageToTake = Mathf.Clamp(damageAmount - defence, 0, int.MaxValue);
+
+        PreviousDamageTaken = "-" + damageToTake;
+
+        currentHealth -= damageToTake;
         currentDamageInvulnerabilityDuration = damageInvulnerabilityDuration;
 
-        if(currentHealth <= 0)
+        OnDamageTaken.Invoke(damageToTake, Camera.main.WorldToScreenPoint(transform.position));
+
+        if (currentHealth <= 0)
         {
             gameObject.SetActive(false);
         }
@@ -49,7 +62,12 @@ public class Health : MonoBehaviour
     public void Heal(int healAmount)
     {
         Debug.Log($"Healing damage: +{healAmount}");
+
+        PreviousDamageTaken = "+" + healAmount;
+
         currentHealth = Mathf.Clamp(currentHealth + healAmount, 1, maxHealth);
+
+        OnHealUp.Invoke(this, Camera.main.WorldToScreenPoint(transform.position));
     }
 
     

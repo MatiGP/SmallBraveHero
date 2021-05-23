@@ -52,6 +52,9 @@ public abstract class CharacterController : MonoBehaviour
     public string CharacterAnimPrefix { get => characterAnimPrefix; }
     protected string characterAnimPrefix;
 
+    public float GroundOffset { get => groundOffset; }
+    [SerializeField] protected float groundOffset = 0.1f;
+
     [Header("Detectors")]
     [SerializeField] Transform groundDetector;
     [SerializeField] Vector2 groundDetectorSize;
@@ -77,7 +80,7 @@ public abstract class CharacterController : MonoBehaviour
     public void FixCharacterGroundPosition()
     {
         float floorPos = Physics2D.OverlapBox(groundDetector.position, groundDetectorSize, 0f, groundLayer).ClosestPoint(transform.position).y;
-        transform.position = new Vector3(transform.position.x, floorPos + (characterCollider.size.y / 2));
+        transform.position = new Vector3(transform.position.x, floorPos + (characterCollider.size.y / 2) + groundOffset);
     }
 
     public void FixCharacterWallPosition()

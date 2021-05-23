@@ -11,6 +11,7 @@ public class Projectile : MonoBehaviour
 
     [SerializeField] protected float projectileSpeed = 4f;
     [SerializeField] protected float projectileLifetime = 4f;
+    [SerializeField] protected int projectileDamage = 1;
 
 
     private float currentLifetime;
@@ -39,5 +40,17 @@ public class Projectile : MonoBehaviour
     private void OnEnable()
     {
         currentLifetime = 0;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Player")
+        {
+            collision.GetComponent<Health>().TakeDamage(projectileDamage);
+            ProjectilePooler.Instance.AddProjectileToPool(this);
+            
+        }
+
+        
     }
 }

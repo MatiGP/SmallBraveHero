@@ -1,18 +1,21 @@
 ﻿using Code.Equipment;
 using Code.Equipment.Items;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WeaponRootController : MonoBehaviour
 {
-    [Header("Weapon Flip Settings")]
     [SerializeField] private WeaponHolder weaponHolder;
     [SerializeField] private PlayerController playerController;
 
     private void Awake()
     {
         weaponHolder.OnAttack += RotateWeapon;
+        weaponHolder.OnAttackCompleted += PlayDefaultArmsAnimation;
+    }
+
+    private void PlayDefaultArmsAnimation(object sender, System.EventArgs e)
+    {
+        playerController.PlayerModel.PlayDefaultArmsAnim();
     }
 
     private void RotateWeapon(object sender, System.EventArgs e)

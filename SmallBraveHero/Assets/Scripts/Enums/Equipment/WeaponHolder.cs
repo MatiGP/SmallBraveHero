@@ -9,6 +9,7 @@ namespace Code.Equipment
     public class WeaponHolder : MonoBehaviour
     {
         public event EventHandler OnAttack;
+        public event EventHandler OnAttackCompleted;
 
         [SerializeField] private SpriteRenderer weaponRenderer;
         [SerializeField] private Animator animator;
@@ -36,7 +37,6 @@ namespace Code.Equipment
 
         private void PerformAttack()
         {
-            Debug.Log("hP");
             if (!HasWeapon)
             {
                 return;
@@ -61,12 +61,17 @@ namespace Code.Equipment
             weaponCollider.size = currentWeapon.WeaponColliderSize;
             weaponCollider.offset = weaponRenderer.transform.position + currentWeapon.WeaponColliderOffset;
             animator.SetFloat(0, currentWeapon.WeaponSpeed);
-            animator.Play("Idle");
+            animator.Play("Idle");           
         }
 
         public void DequipWeapon()
         {
             
+        }
+
+        public void FinishAttack()
+        {
+            OnAttackCompleted.Invoke(this, EventArgs.Empty);
         }
 
         public void Attack()

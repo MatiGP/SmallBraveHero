@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f1339925b07213468b50ac9bd995527, type: 3}
   m_Name: Barbarian_Archer_Attack
   m_EditorClassIdentifier: 
-  action: {fileID: 11400000, guid: 58f184d7eb34f7b418468b65696ca7dc, type: 2}
+  action: {fileID: 11400000, guid: 78f7cd0a3dc3cec4baff3a4b5f383c82, type: 2}
   transitions:
   - decision: {fileID: 11400000, guid: 31bd08a1ebd1dc8468946ea539d9c82b, type: 2}
     trueState: {fileID: 11400000, guid: e74564ff23ba9634d83a1f293a420a73, type: 2}

@@ -32,7 +32,7 @@ public class ProjectilePooler : MonoBehaviour
 
             for (int j = 0; j < eachProjectileSpawnCount; j++)
             {
-                Projectile projectile = Instantiate(projectiles[i]);
+                Projectile projectile = Instantiate(projectiles[i], transform);
                 projectile.gameObject.SetActive(false);
 
                 projectilePool[projectiles[i].ProjectileID].Enqueue(projectile);
