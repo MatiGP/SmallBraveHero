@@ -14,6 +14,9 @@ namespace Code.StateMachine.AI.Actions
             Debug.Log("Looking for player");
         }
 
-        
+        public override void PrepareAction(AIController controller)
+        {
+            
+        }
     }
 }

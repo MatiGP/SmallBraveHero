@@ -17,5 +17,10 @@ namespace Code.StateMachine.AI.Actions
 
             controller.transform.position += Vector3.MoveTowards(enemyPos, targetPosition, speed * Time.deltaTime);
         }
+
+        public override void PrepareAction(AIController controller)
+        {
+            
+        }
     }
 }

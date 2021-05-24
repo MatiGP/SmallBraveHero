@@ -19,11 +19,15 @@ public class UIController : MonoBehaviour
     {
         PlayerHealth.OnPlayerDamageTaken += HandlePlayerDamageTaken;
         Health.OnDamageTaken += Health_OnDamageTaken;
+        
     }
+
+    
 
     private void Health_OnDamageTaken(int val, Vector3 position)
     {
-        popUpPooler.SpawnPopUpFromQueue($"+{val}", position);
+        Debug.Log("Taking damage! FROM POP");
+        popUpPooler.SpawnPopUpFromQueue($"-{val}", position);
     }
 
     private void HandlePlayerDamageTaken(PlayerHealth playerHealth)
@@ -33,7 +37,7 @@ public class UIController : MonoBehaviour
         playerHealthText.SetText(healthAmountText);
 
 
-        playerHealthBar.fillAmount = playerHealth.CurrentHealth / playerHealth.MaxHealth;
+        playerHealthBar.fillAmount = (float)playerHealth.CurrentHealth / playerHealth.MaxHealth;
     }
 
 

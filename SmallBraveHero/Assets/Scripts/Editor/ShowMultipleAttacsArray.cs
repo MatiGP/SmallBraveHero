@@ -6,9 +6,7 @@ using Code.StateMachine.AI.Actions;
 
 [CustomEditor(typeof(AttackInMelee))]
 public class ShowMultipleAttacsArray : Editor
-{
-    Rect size = new Rect(0, 0, 100, 400);
-
+{ 
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
@@ -17,6 +15,7 @@ public class ShowMultipleAttacsArray : Editor
 
         EditorGUILayout.BeginVertical();
 
+
         attackThePlayer.hasMultipleAttacks = EditorGUILayout.ToggleLeft("Has Multiple Attacks ", attackThePlayer.hasMultipleAttacks);
 
         if (attackThePlayer.hasMultipleAttacks)
@@ -24,6 +23,14 @@ public class ShowMultipleAttacsArray : Editor
             attackThePlayer.attackCount = EditorGUILayout.IntField("Number of attacks :", attackThePlayer.attackCount);
         }
 
+        if (GUILayout.Button("Save Asset"))
+        {
+            EditorUtility.SetDirty(attackThePlayer);
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+        }
+
+        
         EditorGUILayout.EndVertical();
     }
 }

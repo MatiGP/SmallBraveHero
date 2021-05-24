@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f1339925b07213468b50ac9bd995527, type: 3}
+  m_Name: AssasinDemon_CastAbility_Dash
+  m_EditorClassIdentifier: 
+  action: {fileID: 11400000, guid: c66b174b49b47f247b5fdb2376d31df3, type: 2}
+  transitions:
+  - decision: {fileID: 11400000, guid: 57d25727b90577741940f412981b32d5, type: 2}
+    trueState: {fileID: 11400000, guid: e74564ff23ba9634d83a1f293a420a73, type: 2}
+    falseState: {fileID: 11400000, guid: b5f1ec2a5e91b0849a4c18e4e5e24e65, type: 2}

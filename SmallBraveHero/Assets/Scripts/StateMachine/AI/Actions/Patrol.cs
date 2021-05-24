@@ -15,6 +15,11 @@ namespace Code.StateMachine.AI.Actions
             controller.transform.position += CalculateMovementVector(controller);
         }
 
+        public override void PrepareAction(AIController controller)
+        {
+            
+        }
+
         private Vector3 CalculateMovementVector(AIController controller)
         {           
             if(controller.IsTouchingRightWall && controller.Direction > 0)

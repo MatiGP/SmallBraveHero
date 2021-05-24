@@ -13,6 +13,17 @@ public class AttackManager : MonoBehaviour
     private bool isAttackCompleted = true;
     public bool IsAttackCompleted { get => isAttackCompleted; }
 
+    private float currentAbilityCooldown;
+    public float CurrentAbilityCooldown { get => currentAbilityCooldown; }
+
+    private void Update()
+    {
+        if(currentAbilityCooldown > 0)
+        {
+            currentAbilityCooldown -= Time.deltaTime;
+        }
+    }
+
     //Attack Index => Jaki AttackCollider ma być użyty.
     public void HitEvent(int attackIndex)
     {
@@ -66,6 +77,11 @@ public class AttackManager : MonoBehaviour
     public void SpawnProjectile(int projectileID)
     {
         ProjectilePooler.Instance.SpawnProjectileFromPool(projectileID, direction, transform.position);
+    }
+    
+    public void InitAbilityCooldown(float maxTime)
+    {
+        currentAbilityCooldown = maxTime;
     }
 
     //Gizmosy by zwizualizować collidery ataku.

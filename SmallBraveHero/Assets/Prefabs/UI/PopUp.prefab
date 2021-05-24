@@ -93,12 +93,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36.9
+  m_fontSize: 25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 36.9
+  m_fontSizeMax: 25
   m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -147,8 +147,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34157090a4241164ab5e5271cb171e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popUpText: {fileID: 0}
-  damageColor: {r: 0, g: 0, b: 0, a: 0}
-  healColor: {r: 0, g: 0, b: 0, a: 0}
-  popUpMoveHeight: 30
+  popUpText: {fileID: 888793748000916550}
+  damageColor: {r: 1, g: 0, b: 0, a: 1}
+  healColor: {r: 0, g: 1, b: 0.06683016, a: 1}
+  popUpMoveHeight: 40
   popUpMoveDuration: 1
+  popUpOffset: 10
+  tweenEase: 11

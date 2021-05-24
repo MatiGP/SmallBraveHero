@@ -31,5 +31,9 @@ namespace Code.StateMachine.AI.Actions
             }
         }
 
+        public override void PrepareAction(AIController controller)
+        {
+            
+        }
     }
 }

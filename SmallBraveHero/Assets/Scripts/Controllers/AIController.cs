@@ -124,7 +124,9 @@ namespace Code.StateMachine.AI
             Gizmos.color = Color.magenta;
             Gizmos.DrawLine(transform.position, transform.position + Vector3.right * tauntRange);
             Gizmos.color = Color.white;
-            Gizmos.DrawWireSphere(checkPosition, 0.2f);
+            Gizmos.DrawWireSphere(platformCheckOffset, 0.2f);
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawLine(transform.position + Vector3.down * 0.4f, transform.position + Vector3.down * 0.4f + Vector3.right * attackRange);
         }
     }
 }

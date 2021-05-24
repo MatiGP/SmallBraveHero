@@ -11,5 +11,10 @@ namespace Code.StateMachine.AI.Actions
         {
             controller.transform.position += Vector3.right * controller.MoveSpeed * -controller.Direction;
         }
+
+        public override void PrepareAction(AIController controller)
+        {
+            
+        }
     }
 }

@@ -6,6 +6,7 @@ namespace Code.StateMachine.AI.Actions
 {
     public abstract class AIAction : ScriptableObject
     {
+        public abstract void PrepareAction(AIController controller);
         public abstract void Act(AIController controller);
     }
 

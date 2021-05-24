@@ -12,5 +12,10 @@ namespace Code.StateMachine.AI.Actions
         {
             controller.transform.position += Vector3.down * controller.Gravity * Time.deltaTime;
         }
+
+        public override void PrepareAction(AIController controller)
+        {
+            
+        }
     }
 }

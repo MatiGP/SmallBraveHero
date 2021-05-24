@@ -13,6 +13,7 @@ public class PopUp : MonoBehaviour
     [SerializeField] private float popUpMoveHeight = 30f;
     [SerializeField] private float popUpMoveDuration = 1f;
     [SerializeField] private float popUpOffset = 10f;
+    [SerializeField] private Ease tweenEase;
 
     public void SetPopUpText(string text)
     {
@@ -36,7 +37,9 @@ public class PopUp : MonoBehaviour
 
     public void PlayPopUpAnim()
     {
-        transform.DOMoveY(popUpMoveHeight, popUpMoveDuration).OnComplete(() => {
+        transform.DOMoveY(transform.position.y + popUpMoveHeight, popUpMoveDuration)
+            .SetEase(tweenEase)
+            .OnComplete(() => {
             PopUpPooler.Instance.DisablePopUp(this);
         });
     }

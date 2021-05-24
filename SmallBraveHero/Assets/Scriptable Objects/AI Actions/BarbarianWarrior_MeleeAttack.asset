@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5adf340834a4ad44897d068e8d08e9b, type: 3}
   m_Name: BarbarianWarrior_MeleeAttack
   m_EditorClassIdentifier: 
-  hasMultipleAttacks: 0
-  attackCount: 0
+  hasMultipleAttacks: 1
+  attackCount: 2

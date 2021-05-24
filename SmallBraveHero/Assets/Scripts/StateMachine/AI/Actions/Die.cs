@@ -11,5 +11,10 @@ namespace Code.StateMachine.AI.Actions
             Debug.Log("DIE MORTAL!");
             controller.gameObject.SetActive(false);
         }
+
+        public override void PrepareAction(AIController controller)
+        {
+            
+        }
     }
 }

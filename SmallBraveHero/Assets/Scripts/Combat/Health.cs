@@ -6,8 +6,10 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     public static event Action<int, Vector3> OnDamageTaken;
-    public static event Action<Health, Vector3> OnHealUp;
-    
+    public static event Action<int, Vector3> OnHealUp;
+
+    [SerializeField] private Transform popUpOffsetPos;
+
     [SerializeField] int maxHealth;
     public int MaxHealth { get { return maxHealth; } }
 
@@ -51,7 +53,7 @@ public class Health : MonoBehaviour
         currentHealth -= damageToTake;
         currentDamageInvulnerabilityDuration = damageInvulnerabilityDuration;
 
-        OnDamageTaken.Invoke(damageToTake, Camera.main.WorldToScreenPoint(transform.position));
+        OnDamageTaken.Invoke(damageToTake, Camera.main.WorldToScreenPoint(popUpOffsetPos.position));
 
         if (currentHealth <= 0)
         {
@@ -67,7 +69,7 @@ public class Health : MonoBehaviour
 
         currentHealth = Mathf.Clamp(currentHealth + healAmount, 1, maxHealth);
 
-        OnHealUp.Invoke(this, Camera.main.WorldToScreenPoint(transform.position));
+        OnHealUp.Invoke(healAmount, Camera.main.WorldToScreenPoint(popUpOffsetPos.position));
     }
 
     

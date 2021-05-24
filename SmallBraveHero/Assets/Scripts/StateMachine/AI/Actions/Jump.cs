@@ -12,6 +12,11 @@ namespace Code.StateMachine.AI.Actions
             controller.transform.position += CalculateJumpVector(controller);
         }
 
+        public override void PrepareAction(AIController controller)
+        {
+            
+        }
+
         private Vector3 CalculateJumpVector(AIController controller)
         {
             return Vector3.up * controller.JumpHeight * Time.deltaTime;

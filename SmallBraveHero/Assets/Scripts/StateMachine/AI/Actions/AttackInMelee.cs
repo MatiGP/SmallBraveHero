@@ -14,15 +14,29 @@ namespace Code.StateMachine.AI.Actions
 
         public override void Act(AIController controller)
         {
+            if (!controller.AttackManager.IsAttackCompleted)
+            {
+                Debug.Log("Other Attacking Action is in progress");
+                return;
+            }
+
             if (hasMultipleAttacks)
             {
-                controller.AttackManager.DoAttack(controller.CharacterAnimPrefix + EAction.MeleeAttack + Random.Range(0, attackCount));
-                Debug.Log($"Attack name : {controller.CharacterAnimPrefix + EAction.MeleeAttack + Random.Range(0, attackCount)}");
+                int attackIndex = Random.Range(0, attackCount);
+
+                controller.AttackManager.DoAttack(controller.CharacterAnimPrefix + EAction.MeleeAttack + attackIndex);
+
+                Debug.Log("Attaking with index : " + attackIndex);
             }
             else
             {
                 controller.CharacterAnimator.Play(controller.CharacterAnimPrefix + EAction.MeleeAttack + "0");
             }
+        }
+
+        public override void PrepareAction(AIController controller)
+        {
+            
         }
     }
 }

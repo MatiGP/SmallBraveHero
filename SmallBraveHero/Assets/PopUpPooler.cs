@@ -23,17 +23,16 @@ public class PopUpPooler : MonoBehaviour
         for(int i = 0; i < popUpCount; i++)
         {
             PopUp popUp = Instantiate(popUpPrefab, transform);
-
-            popUpQueue.Enqueue(popUp);
-
             popUp.gameObject.SetActive(false);
+            
+            popUpQueue.Enqueue(popUp);
         }
     }
 
     public void DisablePopUp(PopUp popUp)
     {
-        popUpQueue.Enqueue(popUp);
         popUp.gameObject.SetActive(false);
+        popUpQueue.Enqueue(popUp);      
     }
 
     public void SpawnPopUpFromQueue(string popUpText, Vector3 position)

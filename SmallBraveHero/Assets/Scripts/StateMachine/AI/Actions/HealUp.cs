@@ -13,5 +13,10 @@ namespace Code.StateMachine.AI.Actions
         {
             controller.CharacterHealth.Heal(healAmount);
         }
+
+        public override void PrepareAction(AIController controller)
+        {
+            
+        }
     }
 }

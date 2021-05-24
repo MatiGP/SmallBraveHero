@@ -8,13 +8,18 @@ namespace Code.StateMachine.AI.Actions
     public class Dash : AIAction
     {
         [SerializeField] private float dashSpeed = 15f;
+        [SerializeField] private float abilityCooldown = 4f;
+
 
         public override void Act(AIController controller)
-        {
+        {          
             controller.CharacterAnimator.Play(controller.CharacterAnimPrefix + EAction.Dash);
-
             controller.transform.position += CalculateMovementVector(controller);
+        }
 
+        public override void PrepareAction(AIController controller)
+        {
+            controller.AttackManager.InitAbilityCooldown(abilityCooldown);
         }
 
         private Vector3 CalculateMovementVector(AIController controller)

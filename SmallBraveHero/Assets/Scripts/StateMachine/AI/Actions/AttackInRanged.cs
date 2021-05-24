@@ -38,6 +38,11 @@ namespace Code.StateMachine.AI.Actions
 
             Debug.Log("Setting delay : " + currentAttackDelay);
             
-        }     
+        }
+
+        public override void PrepareAction(AIController controller)
+        {
+            
+        }
     }
 }

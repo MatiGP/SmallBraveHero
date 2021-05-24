@@ -14,6 +14,11 @@ namespace Code.StateMachine.AI.Actions
             controller.transform.position += Vector3.right * FindClosetTeleportPoint(controller);
         }
 
+        public override void PrepareAction(AIController controller)
+        {
+            
+        }
+
         private float FindClosetTeleportPoint(AIController controller)
         {
             float newXPos = 0;
