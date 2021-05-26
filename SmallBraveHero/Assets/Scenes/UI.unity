@@ -1524,8 +1524,9 @@ GameObject:
   - component: {fileID: 1042260241}
   - component: {fileID: 1042260244}
   - component: {fileID: 1042260243}
-  - component: {fileID: 1042260242}
   - component: {fileID: 1042260245}
+  - component: {fileID: 1042260242}
+  - component: {fileID: 1042260246}
   m_Layer: 5
   m_Name: EQPanel
   m_TagString: Untagged
@@ -1551,7 +1552,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -585, y: 0}
   m_SizeDelta: {x: 500, y: 800}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1042260242
@@ -1566,6 +1567,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad03eae36a47da4c849b05f06e7e2a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemSlots:
+  - {fileID: 614772194}
+  - {fileID: 1856058402}
+  - {fileID: 591230868}
+  - {fileID: 696001636}
+  - {fileID: 1742126228}
 --- !u!114 &1042260243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1630,6 +1637,21 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1042260246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042260240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cef95a7e76cfd264abff884f4306fa06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryMoveXTreshold: 600
+  inventoryMoveXSpeed: 1.4
+  inventoryMoxeEase: 2
 --- !u!1 &1055998571
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,18 +1,38 @@
-﻿using System.Collections;
+﻿using Code.Equipment;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Code.Equipment.Items;
+using UnityEngine.UI;
 
 public class InventoryPanel : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Image[] itemSlots = new Image[5];
+
+    private void Awake()
     {
-        
+        BindEvents();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void BindEvents()
     {
-        
+        Inventory.OnItemEquipped += Inventory_OnItemEquipped;
+    }
+
+    private void UnBindEvents()
+    {
+        Inventory.OnItemEquipped -= Inventory_OnItemEquipped;
+    }
+
+    private void Inventory_OnItemEquipped(Item newItem, int slot)
+    {
+        itemSlots[slot].gameObject.SetActive(true);
+
+        itemSlots[slot].sprite = newItem.ItemSprite;
+    }
+
+    private void OnDestroy()
+    {
+        UnBindEvents();
     }
 }

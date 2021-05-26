@@ -2,22 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Code.Equipment.Items;
+using System;
 
 namespace Code.Equipment
 {
     public class Inventory : MonoBehaviour
     {
+        public static event Action<Item, int> OnItemEquipped;
+
+        public static Inventory Instance; 
+
         [SerializeField] WeaponHolder weaponHolder;
         public WeaponHolder WeaponHolder { get => weaponHolder; }
 
-        public static Inventory Instance;
-
         Item[] equippedItems = new Item[5];
-        Item[] itemsInBackpack;
 
         private void Awake()
         {
             Instance = this;
+        }
+
+        public void EquipItem(EItemSlot slot, Item item)
+        {
+            equippedItems[(int)slot] = item;
+
+            OnItemEquipped.Invoke(item, (int)slot);
         }
     }
 }

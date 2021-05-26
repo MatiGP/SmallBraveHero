@@ -9,6 +9,7 @@ namespace Code.Equipment.Items
     {
         [SerializeField] private int weaponMinDamage;
         public int WeaponMinDamage { get => weaponMinDamage; }
+
         [SerializeField] private int weaponMaxDamage;
         public int WeaponMaxDamage { get => weaponMaxDamage; }
 
@@ -24,9 +25,12 @@ namespace Code.Equipment.Items
         [SerializeField] private Vector3 weaponColliderOffset;
         public Vector3 WeaponColliderOffset { get => weaponColliderOffset; }
 
+        [SerializeField] private EItemSlot slot = EItemSlot.Weapon;      
+
         public override void Use(Inventory inventory)
         {
-            Inventory.Instance.WeaponHolder.EquipWeapon(this);
+            inventory.WeaponHolder.EquipWeapon(this);
+            inventory.EquipItem(slot, this);
         }
 
         

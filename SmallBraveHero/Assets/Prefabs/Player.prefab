@@ -101,7 +101,7 @@ SpriteRenderer:
   m_SortingLayerID: -1215856411
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3195111309885099143, guid: cf26e8f34998fb64eb6f161e9cebb201, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -109,7 +109,7 @@ SpriteRenderer:
   m_Size: {x: 0.5, y: 0.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &4177417737266858312
@@ -686,7 +686,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4177417738305576136}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.21000004, y: -0.031000137, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -708,9 +708,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponRenderer: {fileID: 4177417737121514755}
   animator: {fileID: 4177417738305576143}
-  currentWeapon: {fileID: 11400000, guid: 08e6d0f1a6f50d34fa099235cd732e55, type: 2}
+  currentWeapon: {fileID: 0}
   weaponCollider: {fileID: 4177417738305576140}
   playerController: {fileID: 4177417738529460930}
+  enemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!95 &4177417738305576143
 Animator:
   serializedVersion: 3
@@ -772,7 +775,7 @@ GameObject:
   - component: {fileID: 4177417738529460928}
   m_Layer: 10
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -829,7 +832,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4177417738529460943}
-  m_BodyType: 2
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -55,6 +56,7 @@ public class PlayerController : CharacterController
         controls.Gameplay.MoveLeftRight.performed += MoveLeftRight_performed;
         controls.Gameplay.MoveLeftRight.canceled += MoveLeftRight_canceled;
         controls.Gameplay.MoveLeftRight.Enable();
+        
 
         controls.Gameplay.Jump.performed += Jump_performed;
         controls.Gameplay.Jump.canceled += Jump_canceled;

@@ -48,7 +48,12 @@ SpriteAtlas:
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: 21300000, guid: 25af2181bda0b524ea87e14ff6a51f83, type: 3}
+  - {fileID: -1019134177567526023, guid: 25af2181bda0b524ea87e14ff6a51f83, type: 3}
+  - {fileID: 7099992955145138862, guid: 25af2181bda0b524ea87e14ff6a51f83, type: 3}
+  - {fileID: 8391257182911512316, guid: 25af2181bda0b524ea87e14ff6a51f83, type: 3}
+  - {fileID: -4342016954433917033, guid: 25af2181bda0b524ea87e14ff6a51f83, type: 3}
+  - {fileID: 7411470930485109605, guid: 25af2181bda0b524ea87e14ff6a51f83, type: 3}
+  - {fileID: 5846834870027792318, guid: 25af2181bda0b524ea87e14ff6a51f83, type: 3}
   - {fileID: 3987911745469200085, guid: cf26e8f34998fb64eb6f161e9cebb201, type: 3}
   - {fileID: 7524432703662525143, guid: cf26e8f34998fb64eb6f161e9cebb201, type: 3}
   - {fileID: 3118105958099710458, guid: cf26e8f34998fb64eb6f161e9cebb201, type: 3}
@@ -79,7 +84,12 @@ SpriteAtlas:
   - {fileID: 7524343285064329540, guid: cf26e8f34998fb64eb6f161e9cebb201, type: 3}
   - {fileID: -8984997815990334839, guid: cf26e8f34998fb64eb6f161e9cebb201, type: 3}
   m_PackedSpriteNamesToIndex:
-  - _tems
+  - _tems_4
+  - _tems_5
+  - _tems_2
+  - _tems_3
+  - _tems_0
+  - _tems_1
   - 16_16Weapons (1)_20
   - 16_16Weapons (1)_21
   - 16_16Weapons (1)_28

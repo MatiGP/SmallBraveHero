@@ -48,7 +48,12 @@ SpriteAtlas:
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: 21300000, guid: cd8375a4b01979149a3c472b50f2b9e3, type: 3}
+  - {fileID: 4540107718944200223, guid: cd8375a4b01979149a3c472b50f2b9e3, type: 3}
+  - {fileID: -2588312122648393987, guid: cd8375a4b01979149a3c472b50f2b9e3, type: 3}
+  - {fileID: -989706113704836785, guid: cd8375a4b01979149a3c472b50f2b9e3, type: 3}
+  - {fileID: 5607008508788943267, guid: cd8375a4b01979149a3c472b50f2b9e3, type: 3}
+  - {fileID: -3546452479825467993, guid: cd8375a4b01979149a3c472b50f2b9e3, type: 3}
+  - {fileID: -3901693111244708302, guid: cd8375a4b01979149a3c472b50f2b9e3, type: 3}
   - {fileID: 21300000, guid: 0ddb3f299d9aaa545897489a301af571, type: 3}
   - {fileID: -8683326458019749563, guid: 09cb53b983b4f11499aa59392fd02610, type: 3}
   - {fileID: -221398988683580353, guid: 09cb53b983b4f11499aa59392fd02610, type: 3}
@@ -65,7 +70,12 @@ SpriteAtlas:
   - {fileID: 1620591641210142324, guid: 09cb53b983b4f11499aa59392fd02610, type: 3}
   - {fileID: 7656311199515090035, guid: 09cb53b983b4f11499aa59392fd02610, type: 3}
   m_PackedSpriteNamesToIndex:
-  - UI_EquipTips
+  - UI_EquipTips_5
+  - UI_EquipTips_4
+  - UI_EquipTips_3
+  - UI_EquipTips_2
+  - UI_EquipTips_1
+  - UI_EquipTips_0
   - 16x16 BagpackIcon
   - _I_Elements_0
   - _I_Elements_1

@@ -17,13 +17,14 @@ namespace Code.Equipment
         public Weapon CurrentWeapon { get => currentWeapon; }
         [SerializeField] private BoxCollider2D weaponCollider;
         [SerializeField] private PlayerController playerController;
+        [SerializeField] private LayerMask enemyLayerMask;
 
         public bool HasWeapon { get => currentWeapon != null; }
-
+    
         float attackDelay;
         int damage;
 
-        private void Awake()
+        private void Start()
         {
             playerController.PlayerControls.Gameplay.Attack.performed += ctx => PerformAttack();
             playerController.PlayerControls.Gameplay.Attack.Enable();
@@ -52,26 +53,53 @@ namespace Code.Equipment
             {
                 attackDelay -= Time.deltaTime;
             }
-        }      
+        } 
 
         public void EquipWeapon(Weapon weapon)
         {
             currentWeapon = weapon;
             weaponRenderer.sprite = weapon.ItemSprite;
             weaponCollider.size = currentWeapon.WeaponColliderSize;
-            weaponCollider.offset = weaponRenderer.transform.position + currentWeapon.WeaponColliderOffset;
+            weaponCollider.offset = currentWeapon.WeaponColliderOffset;
             animator.SetFloat(0, currentWeapon.WeaponSpeed);
-            animator.Play("Idle");           
+            animator.Play("Idle");
+        }
+        
+        private void DisableCollider()
+        {
+            weaponCollider.enabled = false;
         }
 
-        public void DequipWeapon()
+        private void EnableCollider()
         {
-            
+            weaponCollider.enabled = true;
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            Debug.Log("OnTriggerEnter");
+
+            if(collision.tag == "Enemy")
+            {
+                collision.GetComponent<Health>().TakeDamage(damage);
+            }
+        }
+
+        public void ScanForEnemies()
+        {
+            RaycastHit2D[] hits = Physics2D.RaycastAll(weaponRenderer.transform.position, weaponRenderer.transform.up, currentWeapon.WeaponColliderSize.y, enemyLayerMask);
+
+            for(int i = 0; i < hits.Length; i++)
+            {
+                hits[i].collider.GetComponent<Health>().TakeDamage(damage);
+            }
+
         }
 
         public void FinishAttack()
         {
             OnAttackCompleted.Invoke(this, EventArgs.Empty);
+            DisableCollider();
         }
 
         public void Attack()
@@ -80,26 +108,9 @@ namespace Code.Equipment
             attackDelay = currentWeapon.WeaponSpeed;
             animator.Play(""+currentWeapon.WeaponType);
             playerController.PlayerModel.PlayArmsAnimation(playerController.CharacterAnimPrefix+"SwingWeapon_"+currentWeapon.WeaponType);
+            EnableCollider();
         }
-
-        public void EnableWeaponCollider()
-        {
-            weaponCollider.enabled = true;
-        }
-
-        public void DisableWeaponCollider()
-        {
-            weaponCollider.enabled = false;
-        }
-
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            if (collision.tag == "Enemy")
-            {
-                collision.GetComponent<Health>().TakeDamage(damage);
-            }
-        }
-
+     
         private void OnDrawGizmos()
         {
             if (!currentWeapon)
