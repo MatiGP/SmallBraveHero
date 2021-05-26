@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5c10b498991b04cbb4b01c87987a94, type: 3}
   m_Name: ShouldCastDash
   m_EditorClassIdentifier: 
-  chanceToCastAbility: 0.2
+  chanceToCastAbility: 0.9

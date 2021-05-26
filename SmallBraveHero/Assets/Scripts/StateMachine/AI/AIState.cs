@@ -18,9 +18,11 @@ namespace Code.StateMachine.AI.States
                 return;
             }
 
+            CheckTransitions(controller);
+
             DoActions(controller);
 
-            CheckTransitions(controller);
+            
         }
 
         private void DoActions(AIController controller)
@@ -32,18 +34,21 @@ namespace Code.StateMachine.AI.States
         {       
             for (int i = 0; i < transitions.Length; i++)
             {
-                bool decisionSucceeded = transitions[i].Decision.Decide(controller);
+                bool decisionSucceeded =
+                    transitions[i].Negate ? !transitions[i].Decision.Decide(controller) : transitions[i].Decision.Decide(controller);
+
+
+
+                Debug.Log($"Decision succeeded: {decisionSucceeded} for {transitions[i].TrueState}");
 
                 if (decisionSucceeded)
                 {
+                    transitions[i].TrueState.action.PrepareAction(controller);
                     controller.TransitionToState(transitions[i].TrueState);
-                }
-                else
-                {
-                    controller.TransitionToState(transitions[i].FalseState);
-                }
-
+                }               
             }
+
+            controller.TransitionToState(controller.RemainInState);
         }
     }
 }

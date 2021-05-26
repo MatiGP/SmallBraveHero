@@ -24,7 +24,8 @@ namespace Code.StateMachine.AI
         public Animator CharacterAnimator { get => characterAnimator; }
         [SerializeField] Animator characterAnimator = null;
 
-        public PlayerController Target { get; private set; }
+        [SerializeField] private PlayerController target = null;
+        public PlayerController Target { get => target; }
 
         [SerializeField] private AttackManager attackManager = null;
         public AttackManager AttackManager { get => attackManager; }
@@ -32,6 +33,7 @@ namespace Code.StateMachine.AI
         [Header("States")]
         [SerializeField] private AIState currentState = null;
         [SerializeField] private AIState remainState = null;
+        public AIState RemainInState { get => remainState; }
 
         private bool reachedEndOfPlatform = false;
         public bool ReachedEndOfPlatform { get => reachedEndOfPlatform; }
@@ -77,7 +79,7 @@ namespace Code.StateMachine.AI
 
         public void SetTarget(PlayerController target)
         {
-            Target = target;
+            this.target = target;
         }
 
         public void TransitionToState(AIState nextState)

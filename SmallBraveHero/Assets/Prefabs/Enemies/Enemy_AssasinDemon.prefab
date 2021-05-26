@@ -142,7 +142,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 2379583416744692085}
-  attackColliders: []
+  attackColliders:
+  - attackPosition: {x: 0.26, y: -0.25}
+    attackRadius: 0.34
+    attackDamage: 8
 --- !u!95 &2379583416744692083
 Animator:
   serializedVersion: 3

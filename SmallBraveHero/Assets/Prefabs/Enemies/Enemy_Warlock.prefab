@@ -197,7 +197,7 @@ MonoBehaviour:
   Gizmo: 1
   characterCollider: {fileID: 7220533963182220244}
   characterHealth: {fileID: 7220533963182220271}
-  moveSpeed: 1
+  moveSpeed: 2
   jumpHeight: 0
   jumpDuration: 3.45
   wallPosOffset: 0.2

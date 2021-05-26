@@ -10,6 +10,7 @@ namespace Code.StateMachine.AI.Actions
         [SerializeField] private float dashSpeed = 15f;
         [SerializeField] private float abilityCooldown = 4f;
 
+        float dashDirection = 0;
 
         public override void Act(AIController controller)
         {          
@@ -20,6 +21,7 @@ namespace Code.StateMachine.AI.Actions
         public override void PrepareAction(AIController controller)
         {
             controller.AttackManager.InitAbilityCooldown(abilityCooldown);
+            dashDirection = controller.Direction;
         }
 
         private Vector3 CalculateMovementVector(AIController controller)
@@ -39,7 +41,7 @@ namespace Code.StateMachine.AI.Actions
                 return Vector3.zero;
             }
 
-            return Vector3.right * dashSpeed * controller.Direction * Time.deltaTime;
+            return Vector3.right * dashSpeed * dashDirection * Time.deltaTime;
         }
 
 

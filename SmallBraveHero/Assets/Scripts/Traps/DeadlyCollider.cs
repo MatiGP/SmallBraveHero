@@ -14,4 +14,5 @@ public class DeadlyCollider : MonoBehaviour
             playerHealth.TakeDamage(damage);
         }
     }
+
 }

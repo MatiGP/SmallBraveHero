@@ -19,10 +19,15 @@ public class UIController : MonoBehaviour
     {
         PlayerHealth.OnPlayerDamageTaken += HandlePlayerDamageTaken;
         Health.OnDamageTaken += Health_OnDamageTaken;
+        Health.OnHealUp += Health_OnHealUp;
         
     }
 
-    
+    private void Health_OnHealUp(int val, Vector3 position)
+    {
+        Debug.Log("Healing damage! FROM POP");
+        popUpPooler.SpawnPopUpFromQueue($"+{val}", position);
+    }
 
     private void Health_OnDamageTaken(int val, Vector3 position)
     {

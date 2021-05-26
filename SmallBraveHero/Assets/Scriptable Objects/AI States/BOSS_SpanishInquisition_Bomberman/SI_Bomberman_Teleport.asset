@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f1339925b07213468b50ac9bd995527, type: 3}
+  m_Name: SI_Bomberman_Teleport
+  m_EditorClassIdentifier: 
+  action: {fileID: 11400000, guid: 49bc0b0e8665ef44996a8235fd6d4164, type: 2}
+  transitions:
+  - decision: {fileID: 11400000, guid: 5fecaa566264c5746b805b95334c2eeb, type: 2}
+    negate: 1
+    trueState: {fileID: 11400000, guid: 505e30de85714414c8b30f3e19923ab5, type: 2}
