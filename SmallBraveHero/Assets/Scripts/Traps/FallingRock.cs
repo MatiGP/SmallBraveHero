@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class FallingRock : MonoBehaviour
 {
-    Rigidbody2D siema;
+    [SerializeField] private int damage = 4000;
+
+    Rigidbody2D rb;
 
     private void Start()
     {
-        siema = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name.Equals("Player"))
-            siema.isKinematic = false;
+            rb.isKinematic = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

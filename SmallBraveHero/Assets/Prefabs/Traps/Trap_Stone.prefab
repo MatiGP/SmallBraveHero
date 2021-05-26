@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3579130552174439375}
   m_Layer: 0
   m_Name: Trap_Stone
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,3 +171,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77e291b1d98a89247a5e0ae9d38d12c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 4000
