@@ -9,9 +9,9 @@ public class TrapArrowSpawner : MonoBehaviour
     [SerializeField] private float arrowSpeed;
     [SerializeField] private float arrowDelay;
     [SerializeField] private bool fromLeft = false;
+    [SerializeField] private bool shoot;
 
     private float time = 0;
-    private bool shoot;
 
     private Vector2 dir2;
     // Start is called before the first frame update
