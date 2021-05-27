@@ -48,6 +48,7 @@ SpriteAtlas:
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: 987d904043c3cb248844b441ec89bc75, type: 3}
   - {fileID: -8603967170219370085, guid: 0b0c7f02901942044aa0a8f3162e97b8, type: 3}
   - {fileID: 4769673483244287686, guid: 0b0c7f02901942044aa0a8f3162e97b8, type: 3}
   - {fileID: 558670957913971275, guid: 0b0c7f02901942044aa0a8f3162e97b8, type: 3}
@@ -59,6 +60,7 @@ SpriteAtlas:
   - {fileID: -898442241759939511, guid: 0b0c7f02901942044aa0a8f3162e97b8, type: 3}
   - {fileID: 34568405140544131, guid: 0b0c7f02901942044aa0a8f3162e97b8, type: 3}
   - {fileID: 21300000, guid: bd1f5613675dc8d4fa23514cfd7f93dc, type: 3}
+  - {fileID: 21300000, guid: 487c542508a052b4b819a0b9e50da93f, type: 3}
   - {fileID: -223520912772822353, guid: 9da81ce5404dd5745adc0b6181eaf853, type: 3}
   - {fileID: -8020987090183089722, guid: 9da81ce5404dd5745adc0b6181eaf853, type: 3}
   - {fileID: -6685341999571096421, guid: 9da81ce5404dd5745adc0b6181eaf853, type: 3}
@@ -80,7 +82,9 @@ SpriteAtlas:
   - {fileID: 8928508882668923317, guid: e5658c96dc4a00e408d6edf8342186d1, type: 3}
   - {fileID: 2974088249187476565, guid: e5658c96dc4a00e408d6edf8342186d1, type: 3}
   - {fileID: 21300000, guid: 7b74b5ea48228814cbb8240e0faaaaab, type: 3}
+  - {fileID: 21300000, guid: d22dff4c454151c49a3e6a229a55c4df, type: 3}
   m_PackedSpriteNamesToIndex:
+  - Trap_Flamethrower
   - environtment_part1_2
   - environtment_part1_3
   - environtment_part1_0
@@ -92,6 +96,7 @@ SpriteAtlas:
   - environtment_part1_8
   - environtment_part1_9
   - WallDungeonTile
+  - Trap_Stone
   - Tiles_Environment_9
   - Tiles_Environment_8
   - Tiles_Environment_1
@@ -113,5 +118,6 @@ SpriteAtlas:
   - _iles_2
   - _iles_3
   - BarbarianArcher_Arrow
+  - TriggerPlate
   m_Tag: LevelAtlas
   m_IsVariant: 0
