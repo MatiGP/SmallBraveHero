@@ -10,8 +10,6 @@ namespace Code.Equipment.Items
         [SerializeField] private EItemSlot slot = EItemSlot.BodyArmor;
 
         [SerializeField] private int bonusDefence = 2;
-
-        // TODO: BONUS STATS
   
         public override void Use(Inventory inventory)
         {

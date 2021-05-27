@@ -11,7 +11,10 @@ namespace Code.StateMachine.AI.Actions
 
         public override void Act(AIController controller)
         {
-            controller.GetComponent<SI_Healer>().HealRandomBoss();
+            if(controller.AttackManager.CurrentAbilityCooldown <= 0)
+            {
+                controller.GetComponent<SI_Healer>().HealRandomBoss();
+            }       
         }
 
         public override void PrepareAction(AIController controller)

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSprite: {fileID: -3195111309885099143, guid: cf26e8f34998fb64eb6f161e9cebb201, type: 3}
   itemName: Long Sword
-  weaponMinDamage: 2
-  weaponMaxDamage: 4
+  weaponMinDamage: 4
+  weaponMaxDamage: 9
   weaponSpeed: 1
   weaponType: 0
   weaponColliderSize: {x: 0.11, y: 0.61}

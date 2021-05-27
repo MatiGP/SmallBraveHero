@@ -50,6 +50,8 @@ SpriteAtlas:
   m_PackedSprites:
   - {fileID: 21300000, guid: 4ce57410912c13f4784964f8f30564b3, type: 3}
   - {fileID: 21300000, guid: fe3a1c70ca7a8544392e6fc2f03a9d92, type: 3}
+  - {fileID: 3801749779012721331, guid: a3c2def0f6040284aacc26672603652a, type: 3}
+  - {fileID: -3999225266820366598, guid: a3c2def0f6040284aacc26672603652a, type: 3}
   - {fileID: 21300000, guid: fe1e68116d1205c4bad385e4ca13112a, type: 3}
   - {fileID: 21300000, guid: 15791451a11382746a78f1cc378a915d, type: 3}
   - {fileID: 21300000, guid: 3ee20161d96ba8a4f888eea6f2071080, type: 3}
@@ -219,6 +221,9 @@ SpriteAtlas:
   - {fileID: -498053133086952226, guid: 18ff8ecd9e51f2d4186396b8f49dfd62, type: 3}
   - {fileID: -7165430117483763257, guid: 18ff8ecd9e51f2d4186396b8f49dfd62, type: 3}
   - {fileID: 3833821353072084493, guid: 18ff8ecd9e51f2d4186396b8f49dfd62, type: 3}
+  - {fileID: 5957354469978899296, guid: 4e0da6dd16d1fb94d85a450e80433329, type: 3}
+  - {fileID: 3301448312872129041, guid: 4e0da6dd16d1fb94d85a450e80433329, type: 3}
+  - {fileID: 2498359270834212532, guid: 4e0da6dd16d1fb94d85a450e80433329, type: 3}
   - {fileID: -2769984320912762731, guid: bdb3e06ef59886947825484106dca25f, type: 3}
   - {fileID: -6067256248879503343, guid: bdb3e06ef59886947825484106dca25f, type: 3}
   - {fileID: 8794394126308870284, guid: bdb3e06ef59886947825484106dca25f, type: 3}
@@ -290,6 +295,8 @@ SpriteAtlas:
   m_PackedSpriteNamesToIndex:
   - Legs_sprite_05
   - Head_sprite_04
+  - _ialogHeads_0
+  - _ialogHeads_1
   - Body_sprite_06
   - Head_sprite_11
   - Arms_sprite_01
@@ -459,6 +466,9 @@ SpriteAtlas:
   - 16x16 PlayerBase_2
   - 16x16 PlayerBase_3
   - 16x16 PlayerBase_10
+  - _oss2_2
+  - _oss2_0
+  - _oss2_1
   - _oss1_25
   - _oss1_24
   - _oss1_27
