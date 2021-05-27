@@ -154,7 +154,7 @@ MonoBehaviour:
   wallDetectorLeft: {fileID: 3593724638850518785}
   wallDetectorSize: {x: 0.12, y: 0.85}
   spriteRenderer: {fileID: 3593724638000066536}
-  tauntRange: 9
+  tauntRange: 3.83
   tauntDuration: 1
   patrolMoveSpeed: 0.5
   attackRange: 0.5

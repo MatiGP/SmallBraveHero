@@ -83,6 +83,7 @@ SpriteAtlas:
   - {fileID: -838612811669211158, guid: cf26e8f34998fb64eb6f161e9cebb201, type: 3}
   - {fileID: 7524343285064329540, guid: cf26e8f34998fb64eb6f161e9cebb201, type: 3}
   - {fileID: -8984997815990334839, guid: cf26e8f34998fb64eb6f161e9cebb201, type: 3}
+  - {fileID: 21300000, guid: bc7c60df98c7fda44b5f67bf9ee82c00, type: 3}
   m_PackedSpriteNamesToIndex:
   - _tems_4
   - _tems_5
@@ -119,5 +120,6 @@ SpriteAtlas:
   - 16_16Weapons (1)_25
   - 16_16Weapons (1)_22
   - 16_16Weapons (1)_23
+  - _omb
   m_Tag: ItemsAtlas
   m_IsVariant: 0

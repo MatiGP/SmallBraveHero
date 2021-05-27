@@ -6,8 +6,7 @@ namespace Code.StateMachine.AI.Decisions
 {
     [CreateAssetMenu(menuName = "AI/Decisions/IsPlayerInMeleeRange")]
     public class IsPlayerInMeleeRange : AIDecision
-    {
-        [SerializeField] private float meleeRange = 0.5f;
+    { 
 
         public override bool Decide(AIController controller)
         {
@@ -18,7 +17,7 @@ namespace Code.StateMachine.AI.Decisions
         {
             float distance = Vector2.Distance(controller.transform.position, controller.Target.transform.position);
 
-            return distance <= meleeRange;
+            return distance <= controller.AttackRange;
         }
 
 

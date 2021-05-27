@@ -19,7 +19,7 @@ namespace Code.StateMachine.AI.Actions
             controller.FlipSprite();
         }
 
-        public int GetPlayerDirection(AIController controller)
+        private int GetPlayerDirection(AIController controller)
         {
             if (controller.Target.transform.position.x > controller.transform.position.x)
             {

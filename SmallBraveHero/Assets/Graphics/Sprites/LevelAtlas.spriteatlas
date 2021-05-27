@@ -82,6 +82,7 @@ SpriteAtlas:
   - {fileID: 8928508882668923317, guid: e5658c96dc4a00e408d6edf8342186d1, type: 3}
   - {fileID: 2974088249187476565, guid: e5658c96dc4a00e408d6edf8342186d1, type: 3}
   - {fileID: 21300000, guid: 7b74b5ea48228814cbb8240e0faaaaab, type: 3}
+  - {fileID: 21300000, guid: d22dff4c454151c49a3e6a229a55c4df, type: 3}
   m_PackedSpriteNamesToIndex:
   - Trap_Flamethrower
   - environtment_part1_2
@@ -117,5 +118,6 @@ SpriteAtlas:
   - _iles_2
   - _iles_3
   - BarbarianArcher_Arrow
+  - TriggerPlate
   m_Tag: LevelAtlas
   m_IsVariant: 0
