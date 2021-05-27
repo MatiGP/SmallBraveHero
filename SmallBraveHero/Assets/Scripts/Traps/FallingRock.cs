@@ -1,27 +1,43 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class FallingRock : MonoBehaviour
 {
-    [SerializeField] private int damage = 4000;
+    [SerializeField] private GameObject rockGameObject1;
+    [SerializeField] private GameObject rockGameObject2;
+    [SerializeField] private GameObject rockGameObject3;
 
-    Rigidbody2D rb;
+    [SerializeField] private float rockFallingDistance = 2f;
+    [SerializeField] private float rockFallDuration = 1f;
 
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
+    [SerializeField] private Ease tweenEase;
+
+    //[SerializeField] private float plateFallingDistance = 0.5f;
+    //[SerializeField] private float plateFallDuration = 0.01f;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name.Equals("Player"))
-            rb.isKinematic = false;
+        RockFall();
+        PlateFall();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void RockFall()//spadanie kamieni
     {
-        if (collision.gameObject.name.Equals("Player"))
-            Debug.Log("Player killed");
+        if (rockGameObject1 != null)
+            rockGameObject1.transform.DOMoveY(rockGameObject1.transform.position.y - rockFallingDistance, rockFallDuration);
+
+        if (rockGameObject2 != null)
+            rockGameObject2.transform.DOMoveY(rockGameObject2.transform.position.y - rockFallingDistance, rockFallDuration);
+
+        if (rockGameObject3 != null)
+            rockGameObject3.transform.DOMoveY(rockGameObject3.transform.position.y - rockFallingDistance, rockFallDuration);
+    }
+
+    void PlateFall()//ukrycie/destroy płytki
+    {
+        GameObject.Destroy(gameObject);
+        //transform.DOMoveY(transform.position.y - plateFallingDistance, plateFallDuration);
     }
 }
